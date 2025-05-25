@@ -1,0 +1,267 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: linear-gradient(75deg, #830c0c, #171616, #0e0c77);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;;
+  margin: 0 auto;
+  padding: 20px;
+
+  a{
+    color: white;
+    text-decoration: none;
+  }
+}
+
+
+nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  font-size: 22px;
+  gap: 20px;
+
+  a{
+    margin: 0 10px;
+  }
+
+  img{
+    width: 175px;
+    height: auto;
+    border-radius: 25%;
+    margin-right: 10px;
+  }
+}
+
+.hero{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  height: 750px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(https://www.fcbarcelona.com/fcbarcelona/photo/2025/01/12/31bf6a45-ad2d-4307-a448-ed92116c0606/_MGA3961.jpg);
+  margin: 0 auto;
+  opacity: 0.6;
+}
+
+.text-hero{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
+  font-size: 28px;
+
+  h1{
+    color:red;
+    font-size: 55px;
+  }
+}
+
+.temporada2024{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 0 auto;
+  gap: 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+
+  img{
+    width: 75%;
+    height: 300px;
+    border-radius: 10px;
+    margin: 10px;
+  }
+}
+
+.foto-jugadores{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+
+  img{
+    width: 75%;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px;
+  };
+}
+
+.jugadores{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 3% auto;
+  padding: 10px;
+  gap: 20px;
+
+  img{
+    width: 75%;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px;
+  }
+}
+
+.cuerpoTecnico{
+  img{
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px;
+  }
+}
+
+.entrenadores{
+  display: flex;
+  flex-direction: row;
+  margin: 3% auto;
+  padding: 10px;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  img{
+    width: 450px;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px;
+  }
+}
+
+.estadio{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 3% auto;
+  padding: 10px;
+  width: 75%;
+  gap: 20px;
+  font-size: 24px;
+
+  img{
+    width: 75%;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px;
+  }
+}
+
+.leyendas{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.cruyff,
+.guardiola,
+.messi,
+.xavi,
+.iniesta{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 3% auto;
+  padding: 10px;
+  gap: 20px;
+  width: 60%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  img{
+    width: 75%;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px;
+  }
+}
+
+
+
+.leyendas-barcelona{
+  display: flex;
+  flex-direction: row;
+  margin: 3% auto;
+  padding: 10px;
+  gap: 20px;
+  font-size: 24px;
+
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  img{
+    width: 400px;
+    height: 350px;
+    border-radius: 10px;
+    margin: 10px;
+  }
+}  
+
+@media (max-width: 1200px) {
+  .temporada2024, .jugadores {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 992px) {
+  .temporada2024, .jugadores {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .entrenadores img {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .temporada2024, .jugadores {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    height: 500px;
+  }
+
+  .entrenadores img {
+    width: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    height: 400px;
+  }
+
+  .text-hero h1 {
+    font-size: 40px;
+  }
+
+  .entrenadores img {
+    width: 200px;
+  }
+}
