@@ -1,0 +1,197 @@
+<!doctype html>
+<html class="no-js" lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FC Barcelona - La Liga 2025-26 | Resultados y Clasificación</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/01_laLiga.css">
+    <meta name="description" content="Sigue el desempeño del FC Barcelona en La Liga 2025-26. Resultados, tabla de posiciones, estadísticas y próximos partidos.">
+    <meta name="keywords" content="FC Barcelona, La Liga, resultados, tabla, clasificación, estadísticas, calendario">
+    
+    <link rel="icon" href="img/fcBarcelona.png" sizes="any">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <header>
+        <section class="navbar">
+            <nav>
+                <a href="index.html">
+                    <img src="https://logohistory.net/wp-content/uploads/2023/12/FC-Barcelona-Logo-2018.png" alt="Logo FC Barcelona">
+                </a>
+                <a href="#tabla-posiciones">Clasificación</a>
+                <a href="#proximos-partidos">Calendario</a>
+                <a href="#estadisticas">Estadísticas</a>
+            </nav>
+        </section>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-laliga">
+            <section class="hero-content">
+                <h1>FC Barcelona en La Liga 2025-26</h1>
+                
+                <section class="season-stats">
+                    <section class="stat-card">
+                        <h3 id="posicion-actual">-</h3>
+                        <p>Posición</p>
+                    </section>
+
+                    <section class="stat-card">
+                        <h3 id="partidos-ganados">0</h3>
+                        <p>Ganados</p>
+                    </section>
+
+                    <section class="stat-card">
+                        <h3 id="partidos-empatados">0</h3>
+                        <p>Empates</p>
+                    </section>
+
+                    <section class="stat-card">
+                        <h3 id="partidos-perdidos">0</h3>
+                        <p>Derrotas</p>
+                    </section>
+
+                    <section class="stat-card">
+                        <h3 id="puntos-totales">0</h3>
+                        <p>Puntos</p>
+                    </section>
+                </section>
+
+                <section class="countdown-container">
+                    <h4>Próximo partido:</h4>
+                    <section class="countdown" id="countdown-timer">
+                        <span id="days">00</span> Días 
+                        <span id="hours">00</span> Horas 
+                        <span id="minutes">00</span> Minutos 
+                        <span id="seconds">00</span> Segundos
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- Tabla de Posiciones -->
+        <section id="tabla-posiciones" class="tabla-section">
+            <h2>Clasificación La Liga 2025-26</h2>
+            
+            <section class="tabla-container">
+                <table class="tabla-laliga">
+                    <thead>
+                        <tr>
+                            <th>Posición</th>
+                            <th>Equipo</th>
+                            <th>PJ</th>
+                            <th>G</th>
+                            <th>E</th>
+                            <th>P</th>
+                            <th>GF</th>
+                            <th>GC</th>
+                            <th>DG</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-body">
+                        <!-- Los datos se cargarán dinámicamente -->
+                    </tbody>
+                </table>
+            </section>
+        </section>
+
+        <!-- Calendario de La Liga -->
+        <section id="proximos-partidos" class="proximos-section">
+            <h2>Calendario de La Liga 2025-26</h2>
+            <p class="section-description">Primeros partidos oficiales de la nueva temporada</p>
+            <section class="proximos-grid" id="proximos-grid">
+                <!-- Los próximos partidos se cargarán dinámicamente -->
+            </section>
+        </section>
+
+        <!-- Estadísticas Detalladas -->
+        <section id="estadisticas" class="estadisticas-section">
+            <h2>Estadísticas de la Temporada</h2>
+            <section class="stats-container">
+                <section class="stats-grid">
+                    <section class="stat-category">
+                        <h3>Ataque</h3>
+                        <section class="stat-item">
+                            <span class="stat-label">Goles por partido</span>
+                            <span class="stat-value" id="goles-por-partido">2.7</span>
+                        </section>
+                        <section class="stat-item">
+                            <span class="stat-label">Disparos por partido</span>
+                            <span class="stat-value" id="disparos-partido">16.2</span>
+                        </section>
+                        <section class="stat-item">
+                            <span class="stat-label">Precisión de pases</span>
+                            <span class="stat-value" id="precision-pases">89%</span>
+                        </section>
+                    </section>
+                    
+                    <section class="stat-category">
+                        <h3>Defensa</h3>
+                        <section class="stat-item">
+                            <span class="stat-label">Goles en contra</span>
+                            <span class="stat-value" id="goles-contra">18</span>
+                        </section>
+                        <section class="stat-item">
+                            <span class="stat-label">Porterías a cero</span>
+                            <span class="stat-value" id="porterias-cero">8</span>
+                        </section>
+                        <section class="stat-item">
+                            <span class="stat-label">Recuperaciones</span>
+                            <span class="stat-value" id="recuperaciones">267</span>
+                        </section>
+                    </section>
+                    
+                    <section class="stat-category">
+                        <h3>Disciplina</h3>
+                        <section class="stat-item">
+                            <span class="stat-label">Tarjetas amarillas</span>
+                            <span class="stat-value" id="tarjetas-amarillas">32</span>
+                        </section>
+                        <section class="stat-item">
+                            <span class="stat-label">Tarjetas rojas</span>
+                            <span class="stat-value" id="tarjetas-rojas">2</span>
+                        </section>
+                        <section class="stat-item">
+                            <span class="stat-label">Faltas cometidas</span>
+                            <span class="stat-value" id="faltas-cometidas">203</span>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- Evolución de la Temporada -->
+        <section class="evolucion-section">
+            <h2>Evolución en La Liga</h2>
+            <section class="chart-container">
+                <canvas id="evolucion-chart" width="800" height="400"></canvas>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="02_copaDelRey.html">Copa del Rey</a>
+            <a href="03_uefa.html">Champions League</a>
+            <a href="04_supercopa.html">Supercopa</a>
+        </nav>
+            <p>&copy; 2025 Diego Andrés Lopez.</p>
+
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/laliga-data.js"></script>
+    <script src="js/laliga-charts.js"></script>
+    <script src="js/laliga-advanced.js"></script>
+    <script src="js/laliga-api.js"></script>
+</body>
+
+</html>

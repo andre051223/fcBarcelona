@@ -1,0 +1,633 @@
+/* Copa del Rey Specific Styles */
+
+/* Hero Section */
+.hero-copa {
+    background: linear-gradient(135deg, 
+        rgba(131, 12, 12, 0.9), 
+        rgba(14, 12, 119, 0.8)), 
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,204,0,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,204,0,0.1)"/><circle cx="40" cy="70" r="1.5" fill="rgba(255,204,0,0.1)"/><circle cx="70" cy="20" r="1" fill="rgba(255,204,0,0.1)"/><circle cx="30" cy="90" r="2" fill="rgba(255,204,0,0.1)"/></svg>');
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-copa::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 204, 0, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background-color: #ffcc00;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+/* Stats Cards */
+.copa-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 204, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 204, 0, 0.6);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    color: #ffcc00;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.stat-card p {
+    color: #ffffff;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Camino Section */
+.camino-section {
+    padding: 4rem 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    margin: 2rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.camino-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #ffcc00;
+    text-align: center;
+}
+
+.eliminatorias-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.eliminatoria {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.eliminatoria.completada {
+    border-color: #28a745;
+    background: rgba(40, 167, 69, 0.1);
+}
+
+.eliminatoria.proxima {
+    border-color: #ffcc00;
+    background: rgba(255, 204, 0, 0.1);
+    animation: pulse 2s infinite;
+}
+
+.eliminatoria.pendiente {
+    border-color: #6c757d;
+    background: rgba(108, 117, 125, 0.1);
+}
+
+.eliminatoria.final {
+    border-color: #dc3545;
+    background: rgba(220, 53, 69, 0.1);
+    border-width: 3px;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 204, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
+}
+
+.eliminatoria h3 {
+    color: #ffcc00;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.partido {
+    margin: 1rem 0;
+}
+
+.equipos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.equipo-local, .equipo-visitante {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.resultado {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffcc00;
+    background: rgba(255, 204, 0, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+}
+
+.fecha {
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+.fecha-final {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+.estado {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.completada .estado {
+    background: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+}
+
+.proxima .estado {
+    background: rgba(255, 204, 0, 0.2);
+    color: #ffcc00;
+}
+
+.pendiente .estado {
+    background: rgba(108, 117, 125, 0.2);
+    color: #6c757d;
+}
+
+.final .estado {
+    background: rgba(220, 53, 69, 0.2);
+    color: #dc3545;
+}
+
+/* Próxima Eliminatoria */
+.proxima-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, rgba(255, 204, 0, 0.1), rgba(131, 12, 12, 0.1));
+    position: relative;
+    z-index: 2;
+}
+
+.proxima-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #ffcc00;
+    text-align: center;
+}
+
+.partido-detalle {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.equipos-enfrentamiento {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.equipo {
+    text-align: center;
+}
+
+.equipo img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.equipo h3 {
+    color: #ffcc00;
+    margin-bottom: 0.5rem;
+}
+
+.equipo p {
+    color: #cccccc;
+}
+
+.vs {
+    text-align: center;
+    color: #ffcc00;
+}
+
+.vs span {
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.fecha-partido {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.hora-partido {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.estadio {
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+.estadisticas-enfrentamiento {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.estadisticas-enfrentamiento h3 {
+    color: #ffcc00;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.historial-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item .numero {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item .descripcion {
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* Historial Section */
+.historial-section {
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.historial-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #ffcc00;
+    text-align: center;
+}
+
+.historial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.historia-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 204, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.historia-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 204, 0, 0.6);
+}
+
+.historia-card h3 {
+    color: #ffcc00;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.historia-card p {
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+.titulos-recientes {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.titulos-recientes h3 {
+    color: #ffcc00;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.titulos-lista {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.titulo-item {
+    display: grid;
+    grid-template-columns: 80px 1fr 200px;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.titulo-item:hover {
+    background: rgba(255, 204, 0, 0.1);
+}
+
+.titulo-item:last-child {
+    border-bottom: none;
+}
+
+.titulo-item .año {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.titulo-item .final {
+    color: #ffffff;
+}
+
+.titulo-item .estadio {
+    color: #cccccc;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+/* Trofeos Section */
+.trofeos-section {
+    padding: 4rem 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.trofeos-section img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.trofeos-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #ffcc00;
+    text-align: center;
+}
+
+.trofeos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trofeo-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 204, 0, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.trofeo-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: rgba(255, 204, 0, 0.6);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.trofeo-imagen {
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trofeo-card:hover img {
+    transform: scale(1.05);
+}
+
+
+
+.trofeo-card h3 {
+    color: #ffcc00;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.trofeo-card p {
+    color: #ffffff;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+footer p {
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .trofeos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .copa-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .eliminatorias-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .equipos-enfrentamiento {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .historial-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .titulo-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .titulo-item .estadio {
+        text-align: center;
+    }
+    
+    .trofeos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .trofeos-section img {
+        height: 180px;
+    }
+    
+    .historial-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .copa-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .camino-section, 
+    .proxima-section, 
+    .historial-section, 
+    .trofeos-section {
+        padding: 2rem 1rem;
+    }
+    
+    .trofeos-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .trofeos-section img {
+        height: 150px;
+    }
+    
+    .trofeo-card {
+        padding: 1rem;
+    }
+    
+    .trofeos-section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .historial-grid {
+        grid-template-columns: 1fr;
+    }
+}

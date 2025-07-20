@@ -1,0 +1,537 @@
+/* Supercopa de España 2026 - Estilos específicos */
+
+/* Hero Section */
+.hero-supercopa {
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-supercopa h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-supercopa h2 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+/* Tournament Info Cards */
+.tournament-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.info-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #fcbf49;
+}
+
+.info-card p {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Countdown Specific to Supercopa */
+.countdown-container h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #fcbf49;
+}
+
+#countdown-supercopa {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid #fcbf49;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#countdown-supercopa span {
+    color: #fcbf49;
+    margin: 0 0.5rem;
+}
+
+/* Qualification Status */
+.qualification-status {
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+    border: 5px solid #fcbf49;
+}
+
+.qualification-status h3 {
+    color: #fcbf49;
+    margin-bottom: 1rem;
+}
+
+#qualification-message {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.status-pending {
+    color: #fcbf49 !important;
+}
+
+/* Information Section */
+.info-section {
+    padding: 4rem 2rem;
+}
+
+.info-section h2 {
+    text-align: center;
+    color: #fcbf49;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.tournament-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.detail-card {
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border: 4px solid #fcbf49;
+    transition: transform 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+}
+
+.detail-card h3 {
+    color: #fcbf49;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.detail-card ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+.detail-card li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* History Section */
+.history-section {
+    padding: 4rem 2rem;
+    color: white;
+}
+
+.history-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #fcbf49;
+}
+
+.history-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+}
+
+.stat-item {
+    text-align: center;
+    background: rgba(252, 191, 73, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 2px solid #fcbf49;
+}
+
+.stat-item h3 {
+    font-size: 3rem;
+    color: #fcbf49;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.stat-item p {
+    font-size: 1.1rem;
+    color: white;
+}
+
+/* Recent Editions */
+.recent-editions h3 {
+    text-align: center;
+    color: #fcbf49;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.editions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.edition-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.edition-card:hover {
+    transform: translateY(-5px);
+}
+
+.edition-card.winner {
+    border: 2px solid #fcbf49;
+    background: rgba(252, 191, 73, 0.2);
+}
+
+.edition-card h4 {
+    font-size: 1.8rem;
+    color: #fcbf49;
+    margin-bottom: 1rem;
+}
+
+.edition-card p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.status {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+.status.champion {
+    background: #fcbf49;
+    color: #004d98;
+}
+
+.status.eliminated {
+    background: #d50032;
+    color: white;
+}
+
+.status.pending {
+    background: #6c757d;
+    color: white;
+}
+
+/* Preparation Section */
+.preparation-section {
+    padding: 4rem 2rem;
+}
+
+.preparation-section h2 {
+    text-align: center;
+    color: #fcbf49;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.preparation-areas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.prep-card {
+    padding: 2.5rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #fcbf49;
+    transition: transform 0.3s ease;
+}
+
+.prep-card:hover {
+    transform: translateY(-5px);
+}
+
+.prep-card h3 {
+    color: #fcbf49;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.prep-card ul {
+    padding-left: 1.5rem;
+}
+
+.prep-card li {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+    position: relative;
+}
+
+.prep-card li::marker {
+    color: #fcbf49;
+}
+
+/* Saudi Arabia Section */
+.saudi-section {
+    padding: 4rem 2rem;
+    color: white;
+}
+
+.saudi-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #fcbf49;
+}
+
+.saudi-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.saudi-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.saudi-card:hover {
+    transform: translateY(-5px);
+}
+
+.saudi-card h3 {
+    color: #fcbf49;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.saudi-card p {
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* Call to Action Section */
+.cta-section {
+    padding: 4rem 2rem;
+    color: white;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fcbf49;
+}
+
+.cta-section p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.cta-btn.primary {
+    background: #fcbf49;
+    color: #004d98;
+}
+
+.cta-btn.primary:hover {
+    background: #e6a830;
+    transform: translateY(-2px);
+}
+
+.cta-btn.secondary {
+    background: transparent;
+    color: #fcbf49;
+    border: 2px solid #fcbf49;
+}
+
+.cta-btn.secondary:hover {
+    background: #fcbf49;
+    color: #004d98;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    border-top: 3px solid #fcbf49;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-supercopa h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-supercopa h2 {
+        font-size: 1.4rem;
+    }
+    
+    .tournament-info {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .info-card {
+        padding: 1.5rem;
+    }
+    
+    #countdown-supercopa {
+        font-size: 1.4rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .tournament-details,
+    .preparation-areas,
+    .saudi-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .editions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .history-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        padding: 1.5rem;
+    }
+    
+    .stat-item h3 {
+        font-size: 2rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-btn {
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-supercopa h1 {
+        font-size: 2rem;
+    }
+    
+    .tournament-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .editions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .history-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    #countdown-supercopa {
+        font-size: 1.2rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info-card,
+.detail-card,
+.prep-card,
+.saudi-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.qualification-status {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Elementos decorativos */

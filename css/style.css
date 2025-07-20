@@ -10,14 +10,20 @@ html {
   text-align: center;
   align-items: center;
   justify-content: center;
-  color: white;;
+  color: white;
   margin: 0 auto;
   padding: 20px;
+  scroll-behavior: smooth; /* Navegación suave */
+}
 
-  a{
-    color: white;
-    text-decoration: none;
-  }
+html a{
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Transición suave */
+}
+
+html a:hover {
+  color: #ffcc00; /* Color dorado al pasar el mouse */
 }
 
 
@@ -28,17 +34,32 @@ nav{
   margin: 20px 0;
   font-size: 22px;
   gap: 20px;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+}
 
-  a{
-    margin: 0 10px;
-  }
+nav a{
+  margin: 0 10px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
 
-  img{
-    width: 175px;
-    height: auto;
-    border-radius: 25%;
-    margin-right: 10px;
-  }
+nav a:hover {
+  background-color: rgba(255, 204, 0, 0.2);
+}
+
+nav a.active {
+  background-color: #ffcc00;
+  color: #830c0c;
+  font-weight: bold;
+}
+
+nav img{
+  width: 175px;
+  height: auto;
+  border-radius: 25%;
+  margin-right: 10px;
+  max-width: 100%; /* Responsive */
 }
 
 .hero{
@@ -73,22 +94,54 @@ nav{
   }
 }
 
-.temporada2024{
+.temporada2025{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
   margin: 0 auto;
-  gap: 10px;
+  gap: 20px;
   text-align: center;
   justify-content: center;
   align-items: center;
+  max-width: 1200px;
+}
 
+.temporada2025 section {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+}
 
-  img{
-    width: 75%;
-    height: 300px;
-    border-radius: 10px;
-    margin: 10px;
-  }
+.temporada2025 section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.temporada2025 img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.temporada2025 button{
+  width: 60%;
+  height: 50px;
+  background-color: #830c0c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.temporada2025 button:hover{
+  background-color: #a00f0f;
+  transform: scale(1.05);
 }
 
 .foto-jugadores{
@@ -97,171 +150,280 @@ nav{
   justify-content: center;
   align-items: center;
   margin-top: 100px;
+}
 
-  img{
-    width: 75%;
-    height: auto;
-    border-radius: 10px;
-    margin: 10px;
-  };
+.foto-jugadores img{
+  width: 75%;
+  height: auto;
+  border-radius: 10px;
+  margin: 10px;
 }
 
 .jugadores{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   margin: 3% auto;
   padding: 10px;
   gap: 20px;
-
-  img{
-    width: 75%;
-    height: auto;
-    border-radius: 10px;
-    margin: 10px;
-  }
+  max-width: 1200px;
 }
 
-.cuerpoTecnico{
-  img{
-    width: 90%;
-    height: auto;
-    border-radius: 10px;
-    margin: 10px;
-  }
-}
-
-.entrenadores{
-  display: flex;
-  flex-direction: row;
-  margin: 3% auto;
-  padding: 10px;
-  gap: 50px;
-  justify-content: center;
-  align-items: center;
+.jugadores section {
   text-align: center;
-
-  img{
-    width: 450px;
-    height: auto;
-    border-radius: 10px;
-    margin: 10px;
-  }
+  transition: transform 0.3s ease;
 }
 
-.estadio{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  margin: 3% auto;
-  padding: 10px;
-  width: 75%;
-  gap: 20px;
-  font-size: 24px;
-
-  img{
-    width: 75%;
-    height: auto;
-    border-radius: 10px;
-    margin: 10px;
-  }
+.jugadores section:hover {
+  transform: scale(1.05);
 }
 
-.leyendas{
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
+.jugadores img{
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 10px;
+  margin: 10px 0;
 }
 
-.cruyff,
-.guardiola,
+/* Sección Leyendas */
+#leyendas {
+  margin: 80px auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+#leyendas h2 {
+  margin-bottom: 50px;
+  font-size: 2.5em;
+  color: #ffcc00;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.leyendas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+
 .messi,
 .xavi,
-.iniesta{
+.iniesta,
+.ronaldihno,
+.puyol,
+.cruyff {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+
+.messi:hover,
+.xavi:hover,
+.iniesta:hover,
+.ronaldihno:hover,
+.puyol:hover,
+.cruyff:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(255, 204, 0, 0.3);
+  border-color: #ffcc00;
+}
+
+
+.messi img,
+.xavi img,
+.iniesta img,
+.ronaldihno img,
+.puyol img,
+.cruyff img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #ffcc00;
+  transition: transform 0.3s ease;
+}
+
+
+.messi img:hover,
+.xavi img:hover,
+.iniesta img:hover,
+.ronaldihno img:hover,
+.puyol img:hover,
+.cruyff img:hover {
+  transform: scale(1.1);
+}
+
+
+.messi h3,
+.xavi h3,
+.iniesta h3,
+.ronaldihno h3,
+.puyol h3,
+.cruyff h3 {
+  color: #ffcc00;
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.messi p,
+.xavi p,
+.iniesta p,
+.ronaldihno p,
+.puyol p,
+.cruyff p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+
+.estadio{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin: 3% auto;
-  padding: 10px;
-  gap: 20px;
-  width: 60%;
-  text-align: center;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
-
-  img{
-    width: 75%;
-    height: auto;
-    border-radius: 10px;
-    margin: 10px;
-  }
+  text-align: center;
+  gap: 30px;
+  margin: 50px auto;
+  max-width: 1200px;
 }
 
+.informacion-estadio {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
 
+.informacion-estadio p {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+}
 
-.leyendas-barcelona{
+.imagen-estadio{
   display: flex;
-  flex-direction: row;
-  margin: 3% auto;
-  padding: 10px;
-  gap: 20px;
-  font-size: 24px;
-
-  flex-direction: column;
-  text-align: center;
   justify-content: center;
   align-items: center;
-  img{
-    width: 400px;
-    height: 350px;
-    border-radius: 10px;
-    margin: 10px;
-  }
-}  
-
-@media (max-width: 1200px) {
-  .temporada2024, .jugadores {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 992px) {
-  .temporada2024, .jugadores {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .entrenadores img {
-    width: 300px;
-  }
+.imagen-estadio img{
+  width: 60%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 10px;
+  transition: transform 0.3s ease;
 }
 
+.imagen-estadio img:hover {
+  transform: scale(1.05);
+}
+
+/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
-  .temporada2024, .jugadores {
-    grid-template-columns: 1fr;
+  nav {
+    flex-direction: column;
+    font-size: 18px;
+    gap: 10px;
+  }
+
+  nav img {
+    width: 120px;
+    margin-bottom: 10px;
   }
 
   .hero {
+    width: 95%;
     height: 500px;
   }
 
-  .entrenadores img {
-    width: 250px;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero {
-    height: 400px;
+  .text-hero {
+    font-size: 20px;
   }
 
   .text-hero h1 {
-    font-size: 40px;
+    font-size: 35px;
   }
 
-  .entrenadores img {
-    width: 200px;
+  .temporada2025 {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .temporada2025 button {
+    width: 70%;
+    font-size: 16px;
+  }
+
+  .jugadores {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .estadio {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    padding: 10px;
+  }
+
+  nav {
+    font-size: 16px;
+  }
+
+  nav img {
+    width: 100px;
+  }
+
+  .hero {
+    width: 100%;
+    height: 400px;
+  }
+
+  .text-hero {
+    font-size: 16px;
+    padding: 5px;
+  }
+
+  .text-hero h1 {
+    font-size: 28px;
+  }
+
+  .temporada2025 {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .temporada2025 button {
+    width: 80%;
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .jugadores {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .foto-jugadores img {
+    width: 95%;
+  }
+
+  .imagen-estadio {
+    flex-direction: column;
   }
 }

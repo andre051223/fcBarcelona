@@ -1,0 +1,405 @@
+<!doctype html>
+<html class="no-js" lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FC Barcelona - UEFA Champions League 2025-26 | Formato Liga Suizo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/03_uefa.css">
+    <meta name="description" content="Sigue al FC Barcelona en la UEFA Champions League 2025-26 con el nuevo formato de liga suizo. 36 equipos, 8 partidos por equipo.">
+    <meta name="keywords" content="FC Barcelona, Champions League, UEFA, formato suizo, resultados, clasificación, Europa">
+    
+    <link rel="icon" href="img/fcBarcelona.png" sizes="any">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <header>
+        <section class="navbar">
+            <nav>
+                <a href="index.html">
+                    <img src="https://logohistory.net/wp-content/uploads/2023/12/FC-Barcelona-Logo-2018.png" alt="Logo FC Barcelona">
+                </a>
+                <a href="#clasificacion-liga">Clasificación </a>
+                <a href="#calendario-barca">Calendario</a>
+                <a href="#estadisticas">Estadísticas</a>
+                <a href="#formato-suizo">Formato</a>
+            </nav>
+        </section>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-champions">
+            <section class="hero-content">
+                <h1>UEFA Champions League 2025-26</h1>
+                
+                <section class="season-stats">
+                    <section class="stat-card">
+                        <h3 id="posicion-liga">-</h3>
+                        <p>Posición Liga</p>
+                    </section>
+                    <section class="stat-card">
+                        <h3 id="partidos-jugados-ucl">0</h3>
+                        <p>-/8 partidos jugados</p>
+                    </section>
+                    <section class="stat-card">
+                        <h3 id="partidos-ganados-ucl">0</h3>
+                        <p>partidos ganados</p>
+                    </section>
+                    <section class="stat-card">
+                        <h3 id="partidos-empatados-ucl">0</h3>
+                        <p>partidos empatados</p>
+                    </section>
+                    <section class="stat-card">
+                        <h3 id="partidos-perdidos-ucl">0</h3>
+                        <p>partidos perdidos</p>
+                    </section>
+                    <section class="stat-card">
+                        <h3 id="puntos-champions">0</h3>
+                        <p>Puntos</p>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- Explicación del Formato Suizo -->
+        <section id="formato-suizo" class="formato-section">
+            <h2>Formato de Liga Suizo</h2>
+            <section class="formato-container">
+                <section class="formato-card">
+                    <h3>Fase de Liga</h3>
+                    <ul>
+                        <li><strong>36 equipos</strong> en una sola liga</li>
+                        <li><strong>8 partidos</strong> por equipo (4 casa, 4 fuera)</li>
+                        <li>Cada equipo enfrenta <strong>8 rivales diferentes</strong></li>
+                        <li>Clasificación única por puntos y criterios UEFA</li>
+                    </ul>
+                </section>
+                <section class="formato-card">
+                    <h3>Clasificación</h3>
+                    <ul>
+                        <li><strong>Puestos 1-8:</strong> Directos a octavos</li>
+                        <li><strong>Puestos 9-24:</strong> Playoff de eliminación</li>
+                        <li><strong>Puestos 25-36:</strong> Eliminados</li>
+                        <li>Los playoffs se juegan ida y vuelta</li>
+                    </ul>
+                </section>
+                <section class="formato-card">
+                    <h3>Criterios de Clasificación</h3>
+                    <ol>
+                        <li>Mayor número de puntos</li>
+                        <li>Mejor diferencia de goles</li>
+                        <li>Mayor número de goles a favor</li>
+                        <li>Mayor número de goles fuera de casa</li>
+                        <li>Mayor número de victorias</li>
+                        <li>Coeficiente UEFA del club</li>
+                    </ol>
+                </section>
+            </section>
+        </section>
+
+        <!-- Clasificación de la Liga -->
+        <section id="clasificacion-liga" class="liga-section">
+            <h2>Posiciones UEFA Champions League 2025-26</h2>
+            <section class="classification-zones">
+                <section class="zone-legend">
+                    <span class="zone zone-direct">1-8: Octavos directos</span>
+                    <span class="zone zone-playoff">9-24: Playoff</span>
+                    <span class="zone zone-eliminated">25-36: Eliminados</span>
+                </section>
+            </section>
+
+            <section class="liga-container">
+                <table class="tabla-champions">
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Equipo</th>
+                            <th>PJ</th>
+                            <th>G</th>
+                            <th>E</th>
+                            <th>P</th>
+                            <th>GF</th>
+                            <th>GC</th>
+                            <th>DG</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-champions-body">
+                        <!-- Los datos se cargarán dinámicamente con JavaScript -->
+                        <tr>
+                            <td colspan="10" style="text-align: center; padding: 40px; color: #FFD700;">
+                                🏆 Cargando clasificación de la UEFA Champions League 2025-26...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+
+        <!-- Calendario del Barcelona -->
+        <section id="calendario-barca" class="calendario-section">
+            <h2>📅 Calendario FC Barcelona - Fase de Liga</h2>
+            
+            <section class="partidos-container">
+                <section class="jornada-card">
+                    <h3>Jornada 1</h3>
+                    <section class="partido-info">
+                        <section class="fecha">17-19 Sep 2025</section>
+                        <section class="partido">
+                            <span class="equipo local">FC Barcelona</span>
+                            <span class="vs">vs</span>
+                            <span class="equipo visitante">Por confirmar</span>
+                        </section>
+                        <section class="estadio">🏟️ Camp Nou</section>
+                    </section>
+                </section>
+
+                <section class="jornada-card">
+                    <h3>Jornada 2</h3>
+                    <section class="partido-info">
+                        <section class="fecha">01-02 Oct 2025</section>
+                        <section class="partido">
+                            <span class="equipo local">Por confirmar</span>
+                            <span class="vs">vs</span>
+                            <span class="equipo visitante">FC Barcelona</span>
+                        </section>
+                        <section class="estadio">🏟️ Por confirmar</section>
+                    </section>
+                </section>
+
+                <section class="jornada-card">
+                    <h3>Jornada 3</h3>
+                    <section class="partido-info">
+                        <section class="fecha">22-23 Oct 2025</section>
+                        <section class="partido">
+                            <span class="equipo local">FC Barcelona</span>
+                            <span class="vs">vs</span>
+                            <span class="equipo visitante">Por confirmar</span>
+                        </section>
+                        <section class="estadio">🏟️ Camp Nou</section>
+                    </section>
+                </section>
+
+                <section class="jornada-card">
+                    <h3>Jornada 4</h3>
+                    <section class="partido-info">
+                        <section class="fecha">05-06 Nov 2025</section>
+                        <section class="partido">
+                            <span class="equipo local">Por confirmar</span>
+                            <span class="vs">vs</span>
+                            <span class="equipo visitante">FC Barcelona</span>
+                        </section>
+                        <section class="estadio">🏟️ Por confirmar</section>
+                    </section>
+                </section>
+
+                <section class="jornada-card">
+                    <h3>Jornada 5</h3>
+                    <section class="partido-info">
+                        <section class="fecha">26-27 Nov 2025</section>
+                        <section class="partido">
+                            <span class="equipo local">FC Barcelona</span>
+                            <span class="vs">vs</span>
+                            <span class="equipo visitante">Por confirmar</span>
+                        </section>
+                        <section class="estadio">🏟️ Camp Nou</section>
+                    </section>
+                </section>
+
+                <section class="jornada-card">
+                    <h3>Jornada 6</h3>
+                    <section class="partido-info">
+                        <section class="fecha">10-11 Dic 2025</section>
+                        <section class="partido">
+                            <span class="equipo local">Por confirmar</span>
+                            <span class="vs">vs</span>
+                            <span class="equipo visitante">FC Barcelona</span>
+                        </section>
+                        <section class="estadio">🏟️ Por confirmar</section>
+                    </section>
+                </section>
+
+                <section class="jornada-card">
+                    <h3>Jornada 7</h3>
+                    <section class="partido-info">
+                        <section class="fecha">21-22 Ene 2026</section>
+                        <section class="partido">
+                            <span class="equipo local">FC Barcelona</span>
+                            <span class="vs">vs</span>
+                            <span class="equipo visitante">Por confirmar</span>
+                        </section>
+                        <section class="estadio">🏟️ Camp Nou</section>
+                    </section>
+                </section>
+
+                <section class="jornada-card">
+                    <h3>Jornada 8</h3>
+                    <section class="partido-info">
+                        <section class="fecha">29 Ene 2026</section>
+                        <section class="partido">
+                            <span class="equipo local">Por confirmar</span>
+                            <span class="vs">vs</span>
+                            <span class="equipo visitante">FC Barcelona</span>
+                        </section>
+                        <section class="estadio">🏟️ Por confirmar</section>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- Estadísticas -->
+        <section id="estadisticas" class="stats-section">
+            <h2>📈 Estadísticas FC Barcelona en Champions</h2>
+            <section class="stats-container">
+                <section class="stat-group">
+                    <h3>🏆 Historial General</h3>
+                    <section class="stats-grid">
+                        <section class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Títulos Champions</span>
+                        </section>
+                        <section class="stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Finales perdidas</span>
+                        </section>
+                        <section class="stat-item">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Finales totales</span>
+                        </section>
+                    </section>
+                </section>
+
+                <section class="stat-group">
+                    <h3>📊 Temporada Actual 2025-26</h3>
+                    <section class="stats-grid">
+                        <section class="stat-item">
+                            <span class="stat-number" id="victorias-ucl">0</span>
+                            <span class="stat-label">Victorias</span>
+                        </section>
+                        <section class="stat-item">
+                            <span class="stat-number" id="empates-ucl">0</span>
+                            <span class="stat-label">Empates</span>
+                        </section>
+                        <section class="stat-item">
+                            <span class="stat-number" id="derrotas-ucl">0</span>
+                            <span class="stat-label">Derrotas</span>
+                        </section>
+                        <section class="stat-item">
+                            <span class="stat-number" id="gf-ucl">0</span>
+                            <span class="stat-label">Goles a favor</span>
+                        </section>
+                        <section class="stat-item">
+                            <span class="stat-number" id="gc-ucl">0</span>
+                            <span class="stat-label">Goles en contra</span>
+                        </section>
+                        <section class="stat-item">
+                            <span class="stat-number" id="dif-goles-ucl">0</span>
+                            <span class="stat-label">Diferencia</span>
+                        </section>
+                    </section>
+                </section>
+
+                <section class="stat-group">
+                    <h3>🎯 Objetivo de Temporada</h3>
+                    <section class="objective-info">
+                        <p>🥇 <strong>Meta:</strong> Clasificar entre los 8 primeros para acceso directo a octavos</p>
+                        <p>📊 <strong>Puntos estimados necesarios:</strong> 14-16 puntos</p>
+                        <p>⚽ <strong>Formato:</strong> Aprovechar las ventajas del nuevo sistema de liga</p>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- Próximas Fases -->
+        <section class="fases-section">
+            <h2>🗓️ Calendario de Fases</h2>
+            <section class="fases-timeline">
+                <section class="fase-item">
+                    <section class="fase-date">17 Sep - 29 Ene</section>
+                    <section class="fase-name">Fase de Liga</section>
+                    <section class="fase-detail">8 jornadas, 36 equipos</section>
+                </section>
+                <section class="fase-item">
+                    <section class="fase-date">11-19 Feb</section>
+                    <section class="fase-name">Playoff Ida</section>
+                    <section class="fase-detail">Puestos 9-24</section>
+                </section>
+                <section class="fase-item">
+                    <div class="fase-date">18-26 Feb</div>
+                    <div class="fase-name">Playoff Vuelta</div>
+                    <div class="fase-detail">Definición 8 clasificados</div>
+                </section>
+                <section class="fase-item">
+                    <div class="fase-date">4-12 Mar</div>
+                    <div class="fase-name">Octavos Ida</div>
+                    <div class="fase-detail">16 equipos</div>
+                </section>
+                <section class="fase-item">
+                    <div class="fase-date">11-19 Mar</div>
+                    <div class="fase-name">Octavos Vuelta</div>
+                    <div class="fase-detail">Definición 8 clasificados</div>
+                </section>
+                <section class="fase-item">
+                    <div class="fase-date">8-9 Abr</div>
+                    <div class="fase-name">Cuartos Ida</div>
+                    <div class="fase-detail">8 equipos</div>
+                </section>
+                <section class="fase-item">
+                    <div class="fase-date">15-16 Abr</div>
+                    <div class="fase-name">Cuartos Vuelta</div>
+                    <div class="fase-detail">Definición 4 clasificados</div>
+                </section>
+                <section class="fase-item">
+                    <div class="fase-date">29-30 Abr</div>
+                    <div class="fase-name">Semifinales Ida</div>
+                    <div class="fase-detail">4 equipos</div>
+                </section>
+                <section class="fase-item">
+                    <div class="fase-date">6-7 May</div>
+                    <div class="fase-name">Semifinales Vuelta</div>
+                    <div class="fase-detail">Definición finalistas</div>
+                </section>
+                <section class="fase-item final">
+                    <div class="fase-date">2026</div>
+                    <div class="fase-name">FINAL</div>
+                    <div class="fase-detail">Múnich, Alemania</div>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <!-- Panel de Administración (oculto por defecto) -->
+    <section class="admin-panel" id="admin-panel">
+        <h3>🔧 Panel de Administración UEFA</h3>
+        <button onclick="uefaManager.simulateMatchday()">🎲 Simular Jornada</button>
+        <button onclick="uefaManager.resetTable()">🔄 Resetear Tabla</button>
+        <button onclick="document.getElementById('admin-panel').classList.remove('active')">❌ Cerrar</button>
+        <section style="margin-top: 15px; font-size: 0.9rem; color: #ccc;">
+            <p>• Simular Jornada: Agrega resultados aleatorios</p>
+            <p>• Resetear: Vuelve todos los valores a 0</p>
+        </section>
+    </section>
+
+    <!-- Activador del panel (presiona Alt + A) -->
+    <script>
+        document.addEventListener('keydown', function(e) {
+            if (e.altKey && e.key === 'a') {
+                const panel = document.getElementById('admin-panel');
+                panel.classList.toggle('active');
+            }
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Diego Andrés Lopez</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/uefa-champions.js"></script>
+    <script src="js/uefa-results-updater.js"></script>
+</body>
+</html>
