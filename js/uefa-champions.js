@@ -4,199 +4,206 @@ class UEFAChampionsManager {
         this.teamsData = [
             {
                 id: 1,
-                name: "Manchester City",
-                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/52919.png",
-                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
-            },
-            {
-                id: 2,
-                name: "Real Madrid",
-                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50051.png",
-                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
-            },
-            {
-                id: 3,
-                name: "Bayern Múnich",
-                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50037.png",
-                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
-            },
-            {
-                id: 4,
-                name: "Paris Saint-Germain",
-                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/52747.png",
-                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
-            },
-            {
-                id: 5,
-                name: "FC Barcelona",
-                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50080.png",
-                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 },
-                isBarcelona: true
-            },
-            {
-                id: 6,
-                name: "Liverpool",
-                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/7889.png",
-                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
-            },
-            {
-                id: 7,
-                name: "Inter de Milán",
-                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50138.png",
-                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
-            },
-            {
-                id: 8,
-                name: "Borussia Dortmund",
-                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/52758.png",
-                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
-            },
-            {
-                id: 9,
-                name: "Atlético de Madrid",
-                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50124.png",
-                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
-            },
-            {
-                id: 10,
-                name: "Arsenal",
-                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/52280.png",
-                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
-            },
-            {
-                id: 11,
-                name: "Atalanta",
-                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/52816.png",
-                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
-            },
-            {
-                id: 12,
                 name: "Ajax",
                 logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50143.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
-                id: 13,
-                name: "",
+                id: 2,
+                name: "Arsenal",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/52280.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
-                id: 14,
-                name: "",
+                id: 3,
+                name: "Atalanta",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/52816.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
-                id: 15,
-                name: "",
+                id: 4,
+                name: "Athletic Club",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50125.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
-                id: 16,
-                name: "",
+                id: 5,
+                name: "Atletico de Madrid",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50124.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
-                id: 17,
-                name: "",
+                id: 6,
+                name: "Borrussia Dortmund",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/52758.png",
+                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 } 
+            },
+            {
+                id: 7,
+                name: "Barcelona",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50080.png",
+                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 },
+            },
+            {
+                id: 8,
+                name: "Bayern Munich",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50037.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
-                id: 18,
-                name: "",
+                id: 9,
+                name: "Benfica",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50147.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
-                id: 19,
-                name: "",
+                id: 10,
+                name: "Bodo Glimt",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/59333.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
-                id: 20,
-                name: "",
-                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
-            },
-            {
-                id: 21,
+                id: 11,
                 name: "Chelsea",
                 logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/52914.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
-                id: 22,
+                id: 12,
+                name: "Club Brugge",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50043.png",
+                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
+            },
+            {
+                id: 13,
+                name: "Copenhague",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/52709.png",
+                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
+            },
+            {
+                id: 14,
+                name: "Frankfurt",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50072.png",
+                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
+            },
+            {
+                id: 15,
                 name: "Galatasaray",
                 logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50067.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
-                id: 23,
-                name: "AS Monaco",
-                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50023.png",
+                id: 16,
+                name: "Inter de Milán",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50138.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
-                id: 24,
+                id: 17,
                 name: "Juventus",
                 logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50139.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
-                id: 25,
-                name: "Bayer Leverkusen",
+                id: 18,
+                name: "Kairat Almaty",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/79970.png",
+                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
+            },
+            {
+                id: 19,
+                name: "Leverkusen",
                 logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50109.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
-                id: 26,
+                id: 20,
+                name: "Liverpool",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/7889.png",
+                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
+            },
+            {
+                id: 21,
+                name: "Manchester City",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/52919.png",
+                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
+            },
+            {
+                id: 22,
+                name: "Marsella",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/52748.png",
+                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
+            },
+            {
+                id: 23,
+                name: "Monaco",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50023.png",
+                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
+            },
+            {
+                id: 24,
                 name: "Napoli",
                 logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50136.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
-                id: 27,
-                name: "Olympique de Marsella",
-                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/52748.png",
-                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
-            },
-            {
-                id: 28,
-                name: "Newcastle United",
+                id: 25,
+                name: "Newcastle",
                 logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/59324.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
-                id: 29,
-                name: "Olimpiacos",
+                id: 26,
+                name: "Olympiacos",
                 logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/2610.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
-                id: 30,
+                id: 27,
+                name: "Pafos",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/2609532.png",
+                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
+            },
+            {
+                id: 28,
+                name: "PSG",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/52747.png",
+                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
+            },
+            {
+                id: 29,
                 name: "PSV Eindhoven",
                 logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50062.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
+                id: 30,
+                name: "Qarabag",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/60609.png",
+                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
+            },
+            {
                 id: 31,
+                name: "Real Madrid",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50051.png",
+                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
+            },
+            {
+                id: 32,
                 name: "Slavia Praha",
                 logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/52498.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
-                id: 32,
+                id: 33,
                 name: "Sporting CP",
                 logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50149.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
-                id: 33,
-                name: "Tottenham Hotspur",
-                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/1652.png",
-                stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
-            },
-            {
                 id: 34,
-                name: "Villarreal CF",
-                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/70691.png",
+                name: "Tottenham",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/1652.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             },
             {
@@ -207,10 +214,11 @@ class UEFAChampionsManager {
             },
             {
                 id: 36,
-                name: "Frankfurt",
-                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/50072.png",
+                name: "Villarreal",
+                logo: "https://img.uefa.com/imgml/TP/teams/logos/64x64/70691.png",
                 stats: { pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 }
             }
+
         ];
     }
 
