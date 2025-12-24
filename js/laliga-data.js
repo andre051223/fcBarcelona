@@ -1,627 +1,369 @@
-// Datos de La Liga 2025-26
+/**
+ * La Liga Data Manager
+ * Gestiona la visualización de datos específicos de La Liga
+ */
+
 class LaLigaDataManager {
-    constructor() {
-        this.temporada = '2025-26';
-        this.equipos = this.inicializarEquipos();
-        this.resultados = this.generarResultados();
-        this.proximosPartidos = this.generarProximosPartidos();
-        this.estadisticasBarcelona = this.obtenerEstadisticasBarcelona();
+  constructor() {
+    this.competition = 'laliga';
+    this.currentFilter = 'all';
+    
+    // Datos de partidos del Barcelona según las instrucciones
+    this.barcelonaMatches = [
+      { round: 1, date: '16/08/2025', homeTeam: 'Mallorca', awayTeam: 'FC Barcelona', homeScore: 0, awayScore: 3, location: 'Son Moix' },
+      { round: 2, date: '23/08/2025', homeTeam: 'Levante UD', awayTeam: 'FC Barcelona', homeScore: 2, awayScore: 3, location: 'Ciudad de Valencia' },
+      { round: 3, date: '31/08/2025', homeTeam: 'Rayo Vallecano', awayTeam: 'FC Barcelona', homeScore: 1, awayScore: 1, location: 'Vallecas' },
+      { round: 4, date: '14/09/2025', homeTeam: 'FC Barcelona', awayTeam: 'Valencia CF', homeScore: 6, awayScore: 0, location: 'Camp Nou' },
+      { round: 5, date: '21/09/2025', homeTeam: 'FC Barcelona', awayTeam: 'Getafe CF', homeScore: 3, awayScore: 0, location: 'Camp Nou' },
+      { round: 6, date: '25/09/2025', homeTeam: 'Real Oviedo', awayTeam: 'FC Barcelona', location: 'Carlos Tartiere' },
+      { round: 7, date: '28/09/2025', homeTeam: 'FC Barcelona', awayTeam: 'Real Sociedad', location: 'Camp Nou' },
+      { round: 8, date: '05/10/2025', homeTeam: 'Sevilla FC', awayTeam: 'FC Barcelona', location: 'Ramón Sánchez-Pizjuán' },
+      { round: 9, date: '18/10/2025', homeTeam: 'FC Barcelona', awayTeam: 'Girona FC', location: 'Camp Nou' },
+      { round: 10, date: '26/10/2025', homeTeam: 'Real Madrid', awayTeam: 'FC Barcelona', location: 'Santiago Bernabéu' },
+      { round: 11, date: '02/11/2025', homeTeam: 'FC Barcelona', awayTeam: 'Elche CF', location: 'Camp Nou' },
+      { round: 12, date: '09/11/2025', homeTeam: 'FC Barcelona', awayTeam: 'Celta de Vigo', location: 'Camp Nou' },
+      { round: 13, date: '23/11/2025', homeTeam: 'FC Barcelona', awayTeam: 'Athletic Club Bilbao', location: 'Camp Nou' },
+      { round: 14, date: '30/11/2025', homeTeam: 'FC Barcelona', awayTeam: 'Alavés', location: 'Camp Nou' },
+      { round: 15, date: '07/12/2025', homeTeam: 'FC Barcelona', awayTeam: 'Real Betis', location: 'Camp Nou' },
+      { round: 16, date: '14/12/2025', homeTeam: 'FC Barcelona', awayTeam: 'CA Osasuna', location: 'Camp Nou' },
+      { round: 17, date: '21/12/2025', homeTeam: 'FC Barcelona', awayTeam: 'Villarreal CF', location: 'Camp Nou' },
+      { round: 18, date: '04/01/2026', homeTeam: 'FC Barcelona', awayTeam: 'RCD Espanyol', location: 'Camp Nou' },
+      { round: 19, date: '11/01/2026', homeTeam: 'FC Barcelona', awayTeam: 'Atlético de Madrid', location: 'Camp Nou' },
+      { round: 20, date: '16/01/2026', homeTeam: 'FC Barcelona', awayTeam: 'Mallorca', location: 'Camp Nou' }
+    ];
+
+    this.init();
+  }
+
+  /**
+   * Inicializar el gestor
+   */
+  init() {
+    if (typeof matchManager === 'undefined') {
+      console.error('MatchManager no está disponible');
+      return;
     }
 
-    inicializarEquipos() {
-        return [
-            {
-                id: 1,
-                nombre: 'FC Barcelona',
-                escudo: 'https://assets.laliga.com/assets/2019/06/07/small/barcelona.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 2,
-                nombre: 'Real Madrid',
-                escudo: 'https://assets.laliga.com/assets/2019/06/07/small/real-madrid.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 3,
-                nombre: 'Atlético Madrid',
-                escudo: 'https://assets.laliga.com/assets/2024/06/17/small/cbc5c8cc8c3e8abd0e175c00ee53b723.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 4,
-                nombre: 'Real Sociedad',
-                escudo: 'https://assets.laliga.com/assets/2019/06/07/small/real-sociedad.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 5,
-                nombre: 'Real Betis',
-                escudo: 'https://assets.laliga.com/assets/2022/09/15/small/e4a09419d3bd115b8f3dab73d480e146.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 6,
-                nombre: 'Valencia CF',
-                escudo: 'https://assets.laliga.com/assets/2019/06/07/small/valencia.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 7,
-                nombre: 'Athletic Bilbao',
-                escudo: 'https://assets.laliga.com/assets/2019/06/07/small/athletic.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 8,
-                nombre: 'Sevilla FC',
-                escudo: 'https://assets.laliga.com/assets/2019/06/07/small/sevilla.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 9,
-                nombre: 'Villarreal CF',
-                escudo: 'https://assets.laliga.com/assets/2019/06/07/small/villarreal.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 10,
-                nombre: 'Girona FC',
-                escudo: 'https://assets.laliga.com/assets/2022/06/22/small/8f43addbb29e4a72f5e90b6edfe4728f.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 11,
-                nombre: 'CA Osasuna',
-                escudo: 'https://assets.laliga.com/assets/2019/06/07/small/osasuna.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 12,
-                nombre: 'Celta de Vigo',
-                escudo: 'https://assets.laliga.com/assets/2025/07/11/small/0a796827f9e758d7d750db805adde7c5.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 13,
-                nombre: 'Rayo Vallecano',
-                escudo: 'https://assets.laliga.com/assets/2023/04/27/small/57d9950a8745ead226c04d37235c0786.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 14,
-                nombre: 'Elche CF',
-                escudo: 'https://assets.laliga.com/assets/2019/06/07/small/elche.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 15,
-                nombre: 'Getafe CF',
-                escudo: 'https://assets.laliga.com/assets/2023/05/12/small/dc59645c96bc2c9010341c16dd6d4bfa.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 16,
-                nombre: 'Deportivo Alavés',
-                escudo: 'https://assets.laliga.com/assets/2020/09/01/small/27002754a98bf535807fe49a24cc63ea.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 17,
-                nombre: 'RCD Espanyol',
-                escudo: 'https://assets.laliga.com/assets/2025/07/02/small/e9177f6edd72c6360602adbca85e442f.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 18,
-                nombre: 'Real Oviedo',
-                escudo: 'https://assets.laliga.com/assets/2019/06/07/small/oviedo.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 19,
-                nombre: 'Levante UD',
-                escudo: 'https://assets.laliga.com/assets/2019/06/07/small/levante.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            },
-            {
-                id: 20,
-                nombre: 'RCD Mallorca',
-                escudo: 'https://assets.laliga.com/assets/2023/03/22/small/013ae97735bc8e519dcf30f6826168ca.png',
-                puntos: 0,
-                partidos: 0,
-                victorias: 0,
-                empates: 0,
-                derrotas: 0,
-                golesFavor: 0,
-                golesContra: 0,
-                diferencia: 0
-            }
-        ];
+    // Cargar partidos iniciales
+    this.loadInitialMatches();
+
+    // Renderizar datos
+    this.renderStandings();
+    this.renderMatches();
+    this.renderStats();
+
+    // Configurar event listeners
+    this.setupEventListeners();
+
+    // Escuchar actualizaciones de datos
+    window.addEventListener('barcelonaDataUpdated', (event) => {
+      if (event.detail === 'laliga' || event.detail === 'all') {
+        this.renderStandings();
+        this.renderMatches();
+        this.renderStats();
+      }
+    });
+  }
+
+  /**
+   * Cargar partidos iniciales
+   */
+  loadInitialMatches() {
+    const existingMatches = matchManager.getMatches(this.competition);
+    
+    if (existingMatches.length === 0) {
+      this.barcelonaMatches.forEach(match => {
+        matchManager.addMatch({
+          competition: this.competition,
+          ...match
+        });
+      });
+    }
+  }
+
+  /**
+   * Renderizar tabla de clasificación
+   */
+  renderStandings() {
+    const standings = matchManager.getStandings(this.competition);
+    const tbody = document.getElementById('standings-tbody');
+
+    if (!tbody) return;
+
+    tbody.innerHTML = '';
+
+    standings.forEach((team, index) => {
+      const position = index + 1;
+      let zoneClass = '';
+
+      if (position <= 4) zoneClass = 'zone-ucl';
+      else if (position === 5) zoneClass = 'zone-uel';
+      else if (position === 6) zoneClass = 'zone-uecl';
+      else if (position >= 18) zoneClass = 'zone-relegation';
+
+      const isBarca = team.name === 'FC Barcelona';
+      const rowClass = isBarca ? 'barcelona-row' : '';
+
+      const row = `
+        <tr class="${rowClass} ${zoneClass}">
+          <td class="pos-col">${position}</td>
+          <td class="team-col">
+            <img src="${team.logo}" alt="${team.name}" class="team-logo" onerror="this.style.display='none'">
+            <span class="team-name">${team.name}</span>
+          </td>
+          <td class="stat-col">${team.played}</td>
+          <td class="stat-col">${team.wins}</td>
+          <td class="stat-col">${team.draws}</td>
+          <td class="stat-col">${team.losses}</td>
+          <td class="stat-col">${team.goalsFor}</td>
+          <td class="stat-col">${team.goalsAgainst}</td>
+          <td class="stat-col">${team.goalDifference > 0 ? '+' : ''}${team.goalDifference}</td>
+          <td class="pts-col">${team.points}</td>
+        </tr>
+      `;
+
+      tbody.innerHTML += row;
+    });
+  }
+
+  /**
+   * Renderizar partidos
+   */
+  renderMatches() {
+    const matches = matchManager.getMatches(this.competition);
+    const container = document.getElementById('matches-container');
+
+    if (!container) return;
+
+    // Ordenar por jornada
+    const sortedMatches = [...matches].sort((a, b) => a.round - b.round);
+
+    // Filtrar según selección
+    const filteredMatches = this.filterMatches(sortedMatches);
+
+    container.innerHTML = '';
+
+    if (filteredMatches.length === 0) {
+      container.innerHTML = '<p style="text-align: center; padding: 2rem; color: var(--color-gray-500);">No hay partidos para mostrar</p>';
+      return;
     }
 
-    generarResultados() {
-        // No hay partidos de pre-temporada mostrados en esta sección
-        // Solo se muestran partidos oficiales de La Liga 2025-26
-        return [];
+    filteredMatches.forEach(match => {
+      const matchCard = this.createMatchCard(match);
+      container.appendChild(matchCard);
+    });
+  }
+
+  /**
+   * Filtrar partidos según criterio
+   */
+  filterMatches(matches) {
+    switch (this.currentFilter) {
+      case 'played':
+        return matches.filter(m => m.played);
+      case 'upcoming':
+        return matches.filter(m => !m.played);
+      default:
+        return matches;
+    }
+  }
+
+  /**
+   * Crear tarjeta de partido
+   */
+  createMatchCard(match) {
+    const card = document.createElement('div');
+    card.className = `match-card ${match.played ? 'played' : 'upcoming'}`;
+
+    const dateObj = this.parseDate(match.date);
+    const formattedDate = this.formatDate(dateObj);
+
+    let resultHTML = '';
+    let scoreHTML = '';
+
+    if (match.played) {
+      const result = this.getMatchResult(match);
+      resultHTML = `
+        <div class="match-result">
+          <span class="result-badge ${result}">${this.getResultText(result)}</span>
+        </div>
+      `;
+      scoreHTML = `
+        <div class="match-score">
+          <span>${match.homeScore}</span>
+          <span class="match-vs">-</span>
+          <span>${match.awayScore}</span>
+        </div>
+      `;
+    } else {
+      scoreHTML = `<div class="match-vs">VS</div>`;
     }
 
-    generarProximosPartidos() {
-        return [
-            { jornada: 1, fecha: '2025-08-16', hora: '', local: 'RCD Mallorca', visitante: 'FC Barcelona' },
+    card.innerHTML = `
+      <div class="match-header">
+        <span class="match-round">Jornada ${match.round}</span>
+        <span class="match-date">${formattedDate}</span>
+      </div>
+      <div class="match-teams">
+        <div class="match-team home">
+          <div class="team-info">
+            <span class="team-name-match">${match.homeTeam}</span>
+          </div>
+        </div>
+        ${scoreHTML}
+        <div class="match-team away">
+          <div class="team-info">
+            <span class="team-name-match">${match.awayTeam}</span>
+          </div>
+        </div>
+      </div>
+      ${resultHTML}
+    `;
 
-            { jornada: 2, fecha: '2025-08-23', hora: '', local: 'Levante UD', visitante: 'FC Barcelona' },
+    return card;
+  }
 
-            { jornada: 3, fecha: '2025-08-31', hora: '', local: 'Rayo Vallecano', visitante: 'FC Barcelona' },
+  /**
+   * Obtener resultado del partido para Barcelona
+   */
+  getMatchResult(match) {
+    const isBarcaHome = match.homeTeam === 'FC Barcelona';
+    const isBarcaAway = match.awayTeam === 'FC Barcelona';
 
-            { jornada: 4, fecha: '2025-09-14', hora: '', local: 'FC Barcelona', visitante: 'Valencia CF' },
+    if (!isBarcaHome && !isBarcaAway) return '';
 
-            { jornada: 5, fecha: '2025-09-21', hora: '', local: 'FC Barcelona', visitante: 'Getafe CF' },
+    const barcaScore = isBarcaHome ? match.homeScore : match.awayScore;
+    const opponentScore = isBarcaHome ? match.awayScore : match.homeScore;
 
-            { jornada: 6, fecha: '2025-09-24', hora: '', local: 'Real Oviedo', visitante: 'FC Barcelona' },
+    if (barcaScore > opponentScore) return 'win';
+    if (barcaScore < opponentScore) return 'loss';
+    return 'draw';
+  }
 
-            { jornada: 7, fecha: '2025-09-28', hora: '', local: 'FC Barcelona', visitante: 'Real Sociedad' },
-
-            { jornada: 8, fecha: '2025-10-05', hora: '', local: 'Sevilla FC', visitante: 'FC Barcelona' },
-
-            { jornada: 9, fecha: '2025-10-19', hora: '', local: 'FC Barcelona', visitante: 'Girona FC' },
-            
-            { jornada: 10, fecha: '2025-10-26', hora: '', local: 'Real Madrid', visitante: 'FC Barcelona' },
-
-            { jornada: 11, fecha: '2025-11-02', hora: '', local: 'FC Barcelona', visitante: 'Elche CF' },
-
-            { jornada: 12, fecha: '2025-11-09', hora: '', local: 'Celta de Vigo', visitante: 'FC Barcelona' },
-
-            { jornada: 13, fecha: '2025-11-23', hora: '', local: 'FC Barcelona', visitante: 'Athletic Bilbao' },
-
-            { jornada: 14, fecha: '2025-11-30', hora: '', local: 'FC Barcelona', visitante: 'Deportivo Alavés' },
-
-            { jornada: 15, fecha: '2025-12-07', hora: '', local: 'Real Betis', visitante: 'FC Barcelona' },
-
-            { jornada: 16, fecha: '2025-12-14', hora: '', local: 'FC Barcelona', visitante: 'CA Osasuna' },
-
-            { jornada: 17, fecha: '2025-12-21', hora: '', local: 'Villarreal CF', visitante: 'FC Barcelona' },
-
-            { jornada: 18, fecha: '2026-01-04', hora: '', local: 'RCD Espanyol', visitante: 'FC Barcelona' },
-
-            { jornada: 19, fecha: '2026-01-11', hora: '', local: 'FC Barcelona', visitante: 'Atlético Madrid' },
-
-            { jornada: 20, fecha: '2026-01-18', hora: '', local: 'Real Sociedad', visitante: 'FC Barcelona' },
-
-            { jornada: 21, fecha: '2026-01-25', hora: '', local: 'FC Barcelona', visitante: 'Real Oviedo' },
-
-            { jornada: 22, fecha: '2026-02-01', hora: '', local: 'Elche CF', visitante: 'FC Barcelona' },
-
-            { jornada: 23, fecha: '2026-02-08', hora: '', local: 'FC Barcelona', visitante: 'RCD Mallorca' },
-
-            { jornada: 24, fecha: '2026-02-15', hora: '', local: 'Girona FC', visitante: 'FC Barcelona' },
-
-            { jornada: 25, fecha: '2026-02-22', hora: '', local: 'FC Barcelona', visitante: 'Levante UD' },
-
-            { jornada: 26, fecha: '2026-03-01', hora: '', local: 'FC Barcelona', visitante: 'Villarreal CF' },
-
-            { jornada: 27, fecha: '2026-03-08', hora: '', local: 'Athletic Bilbao', visitante: 'FC Barcelona' },
-
-            { jornada: 28, fecha: '2026-03-15', hora: '', local: 'FC Barcelona', visitante: 'Sevilla FC' },
-
-            { jornada: 29, fecha: '2026-03-22', hora: '', local: 'FC Barcelona', visitante: 'Rayo Vallecano' },
-
-            { jornada: 30, fecha: '2026-04-05', hora: '', local: 'Atlético Madrid', visitante: 'FC Barcelona' },
-
-            { jornada: 31, fecha: '2026-04-12', hora: '', local: 'FC Barcelona', visitante: 'RCD Espanyol' },
-
-            { jornada: 32, fecha: '2026-04-19', hora: '', local: 'Getafe CF', visitante: 'FC Barcelona' },
-
-            { jornada: 33, fecha: '2026-04-22', hora: '', local: 'FC Barcelona', visitante: 'Celta de Vigo' },
-
-            { jornada: 34, fecha: '2026-05-03', hora: '', local: 'CA Osasuna', visitante: 'FC Barcelona' },
-
-            { jornada: 35, fecha: '2026-05-10', hora: '', local: 'FC Barcelona', visitante: 'Real Madrid' },
-
-            { jornada: 36, fecha: '2026-05-13', hora: '', local: 'Deportivo Alavés', visitante: 'FC Barcelona' },
-
-            { jornada: 37, fecha: '2026-05-17', hora: '', local: 'FC Barcelona', visitante: 'Real Betis' },
-
-            { jornada: 38, fecha: '2026-05-24', hora: '', local: 'Valencia CF', visitante: 'FC Barcelona' }
-        ];
+  /**
+   * Obtener texto del resultado
+   */
+  getResultText(result) {
+    switch (result) {
+      case 'win': return 'Victoria';
+      case 'draw': return 'Empate';
+      case 'loss': return 'Derrota';
+      default: return '';
     }
+  }
 
-    obtenerEstadisticasBarcelona() {
-        return {
-            golesPorPartido: '0.0',
-            disparosPorPartido: '0.0',
-            precisionPases: '0',
-            golesContra: 0,
-            porteriasACero: 0,
-            recuperaciones: 0,
-            tarjetasAmarillas: 0,
-            tarjetasRojas: 0,
-            faltasCometidas: 0,
-            posesion: '0.0',
-            duelos: '0.0',
-            centros: 0,
-            corners: 0
-        };
-    }
+  /**
+   * Renderizar estadísticas
+   */
+  renderStats() {
+    const stats = matchManager.getBarcelonaStats(this.competition);
 
-    obtenerEquipoPorNombre(nombre) {
-        return this.equipos.find(equipo => equipo.nombre === nombre);
-    }
+    document.getElementById('stat-matches').textContent = stats.played || 0;
+    document.getElementById('stat-wins').textContent = stats.wins || 0;
+    document.getElementById('stat-draws').textContent = stats.draws || 0;
+    document.getElementById('stat-losses').textContent = stats.losses || 0;
+    document.getElementById('stat-goals-for').textContent = stats.goalsFor || 0;
+    document.getElementById('stat-goals-against').textContent = stats.goalsAgainst || 0;
+    
+    const goalDiff = (stats.goalsFor || 0) - (stats.goalsAgainst || 0);
+    document.getElementById('stat-goal-diff').textContent = goalDiff > 0 ? `+${goalDiff}` : goalDiff;
+    
+    const points = (stats.wins || 0) * 3 + (stats.draws || 0);
+    document.getElementById('stat-points').textContent = points;
+  }
 
-    obtenerBarcelona() {
-        return this.equipos.find(equipo => equipo.nombre === 'FC Barcelona');
-    }
+  /**
+   * Configurar event listeners
+   */
+  setupEventListeners() {
+    // Botones de filtro
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        this.currentFilter = e.target.dataset.filter;
+        this.renderMatches();
+      });
+    });
 
-    obtenerTablaCompleta() {
-        // Al inicio de temporada, orden alfabético por defecto
-        return [...this.equipos].sort((a, b) => a.nombre.localeCompare(b.nombre));
-    }
-
-    // Métodos para cargar datos en el DOM
-    cargarTabla() {
-        const tablaBody = document.getElementById('tabla-body');
-        if (!tablaBody) return;
-
-        const tabla = this.obtenerTablaCompleta();
+    // Navegación de secciones
+    const sectionLinks = document.querySelectorAll('.section-nav-link');
+    sectionLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        sectionLinks.forEach(l => l.classList.remove('active'));
+        e.target.classList.add('active');
         
-        tablaBody.innerHTML = tabla.map((equipo, index) => {
-            const posicion = index + 1;
-            let claseEquipo = '';
-            
-            // Asignar clases según posición
-            if (posicion <= 4) claseEquipo = 'champions';
-            else if (posicion <= 6) claseEquipo = 'europa-league';
-            else if (posicion >= 18) claseEquipo = 'descenso';
-            
-            // Destacar Barcelona
-            if (equipo.nombre === 'FC Barcelona') claseEquipo += ' barcelona';
-            
-            return `
-                <tr class="${claseEquipo}">
-                    <td>${posicion}</td>
-                    <td class="equipo">
-                        <img src="${equipo.escudo}" alt="${equipo.nombre}" onerror="this.style.display='none'">
-                        ${equipo.nombre}
-                    </td>
-                    <td>${equipo.partidos}</td>
-                    <td>${equipo.victorias}</td>
-                    <td>${equipo.empates}</td>
-                    <td>${equipo.derrotas}</td>
-                    <td>${equipo.golesFavor}</td>
-                    <td>${equipo.golesContra}</td>
-                    <td>${equipo.diferencia > 0 ? '+' : ''}${equipo.diferencia}</td>
-                    <td><strong>${equipo.puntos}</strong></td>
-                </tr>
-            `;
-        }).join('');
-    }
+        const targetId = e.target.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+          const headerOffset = 140;
+          const elementPosition = targetSection.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-    cargarResultados() {
-        const resultadosGrid = document.getElementById('resultados-grid');
-        if (!resultadosGrid) return;
-
-        if (this.resultados.length === 0) {
-            resultadosGrid.innerHTML = `
-                <div class="no-resultados">
-                    <div class="no-resultados-icon">⚽</div>
-                    <h3>Temporada no iniciada</h3>
-                    <p>Los partidos oficiales de La Liga 2025-26 comenzarán el 18 de agosto de 2025.</p>
-                    <div class="temporada-info">
-                        <span>🗓️ Inicio: 18 de agosto de 2025</span>
-                        <span>🏆 38 jornadas por delante</span>
-                    </div>
-                </div>
-            `;
-            return;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
         }
+      });
+    });
 
-        resultadosGrid.innerHTML = this.resultados.map(partido => {
-            const fecha = new Date(partido.fecha).toLocaleDateString('es-ES', {
-                day: 'numeric',
-                month: 'long'
-            });
+    // Actualizar link activo al hacer scroll
+    this.updateActiveSectionOnScroll();
+  }
 
-            const claseResultado = `resultado-${partido.resultado}`;
-            
-            return `
-                <div class="resultado-card ${claseResultado}">
-                    <div class="resultado-header">
-                        <span class="fecha">${fecha}</span>
-                        <span class="jornada">Jornada ${partido.jornada}</span>
-                    </div>
-                    <div class="resultado-partido">
-                        <div class="equipo-info">
-                            <img src="${this.obtenerEscudoPorNombre(partido.local)}" alt="${partido.local}" onerror="this.style.display='none'">
-                            <span class="equipo-nombre">${partido.local}</span>
-                        </div>
-                        <div class="marcador">
-                            ${partido.golesLocal} - ${partido.golesVisitante}
-                        </div>
-                        <div class="equipo-info">
-                            <span class="equipo-nombre">${partido.visitante}</span>
-                            <img src="${this.obtenerEscudoPorNombre(partido.visitante)}" alt="${partido.visitante}" onerror="this.style.display='none'">
-                        </div>
-                    </div>
-                </div>
-            `;
-        }).join('');
-    }
+  /**
+   * Actualizar sección activa en scroll
+   */
+  updateActiveSectionOnScroll() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.section-nav-link');
 
-    cargarProximosPartidos() {
-        const proximosGrid = document.getElementById('proximos-grid');
-        if (!proximosGrid) return;
-
-        proximosGrid.innerHTML = this.proximosPartidos.map(partido => {
-            // Manejar fecha vacía
-            let fechaTexto = 'Fecha por confirmar';
-            if (partido.fecha) {
-                // Crear fecha en zona horaria local para evitar problemas de UTC
-                const fechaParts = partido.fecha.split('-');
-                const fecha = new Date(fechaParts[0], fechaParts[1] - 1, fechaParts[2]);
-                
-                fechaTexto = fecha.toLocaleDateString('es-ES', {
-                    weekday: 'long',
-                    day: 'numeric',
-                    month: 'long'
-                });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
             }
-
-            return `
-                <div class="proximo-card">
-                    <div class="jornada-numero">Jornada ${partido.jornada}</div>
-                    <div class="partido-fecha">${fechaTexto}</div>
-                    <div class="partido-hora">${partido.hora || 'Hora por confirmar'}</div>
-                    <div class="vs-equipos">
-                        <div class="vs-equipo">
-                            <img src="${this.obtenerEscudoPorNombre(partido.local)}" alt="${partido.local}" onerror="this.style.display='none'" style="${partido.local ? '' : 'display:none'}">
-                            <div>${partido.local || 'Rival por confirmar'}</div>
-                        </div>
-                        <div class="vs-vs">VS</div>
-                        <div class="vs-equipo">
-                            <img src="${this.obtenerEscudoPorNombre(partido.visitante)}" alt="${partido.visitante}" onerror="this.style.display='none'" style="${partido.visitante ? '' : 'display:none'}">
-                            <div>${partido.visitante || 'Rival por confirmar'}</div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }).join('');
-    }
-
-    obtenerEscudoPorNombre(nombre) {
-        const equipo = this.obtenerEquipoPorNombre(nombre);
-        return equipo ? equipo.escudo : 'https://via.placeholder.com/30x30?text=?';
-    }
-
-    actualizarEstadisticasHero() {
-        const barcelona = this.obtenerBarcelona();
-        if (!barcelona) return;
-
-        // Al inicio de temporada, todos los equipos están empatados en posición
-        const posicion = '1º*'; // Asterisco indica empate inicial
-        
-        // Actualizar elementos del hero con datos de temporada oficial
-        this.actualizarElemento('posicion-actual', posicion);
-        this.actualizarElemento('puntos-totales', barcelona.puntos);
-        this.actualizarElemento('partidos-jugados', barcelona.partidos);
-        this.actualizarElemento('partidos-ganados', barcelona.victorias);
-        this.actualizarElemento('partidos-empatados', barcelona.empates);
-        this.actualizarElemento('partidos-perdidos', barcelona.derrotas);
-        this.actualizarElemento('goles-favor', barcelona.golesFavor);
-        
-        // Agregar nota explicativa si existe el elemento
-        const notaElement = document.getElementById('nota-temporada');
-        if (notaElement) {
-            notaElement.textContent = '*Temporada 2025-26 no iniciada oficialmente';
+          });
         }
-    }
+      });
+    }, {
+      rootMargin: '-150px 0px -50% 0px'
+    });
 
-    cargarEstadisticasDetalladas() {
-        const stats = this.estadisticasBarcelona;
-        
-        // Actualizar estadísticas de ataque
-        this.actualizarElemento('goles-por-partido', stats.golesPorPartido);
-        this.actualizarElemento('disparos-partido', stats.disparosPorPartido);
-        this.actualizarElemento('precision-pases', `${stats.precisionPases}%`);
-        
-        // Actualizar estadísticas de defensa
-        this.actualizarElemento('goles-contra', stats.golesContra);
-        this.actualizarElemento('porterias-cero', stats.porteriasACero);
-        this.actualizarElemento('recuperaciones', stats.recuperaciones);
-        
-        // Actualizar estadísticas de disciplina
-        this.actualizarElemento('tarjetas-amarillas', stats.tarjetasAmarillas);
-        this.actualizarElemento('tarjetas-rojas', stats.tarjetasRojas);
-        this.actualizarElemento('faltas-cometidas', stats.faltasCometidas);
-    }
+    sections.forEach(section => observer.observe(section));
+  }
 
-    actualizarElemento(id, valor) {
-        const elemento = document.getElementById(id);
-        if (elemento) {
-            elemento.textContent = valor;
-        }
-    }
+  /**
+   * Parsear fecha
+   */
+  parseDate(dateStr) {
+    if (!dateStr) return new Date();
+    const [day, month, year] = dateStr.split('/');
+    return new Date(year, month - 1, day);
+  }
 
-    // Inicializar todos los datos
-    inicializar() {
-        this.cargarTabla();
-        this.cargarResultados();
-        this.cargarProximosPartidos();
-        this.actualizarEstadisticasHero();
-        this.cargarEstadisticasDetalladas();
-        this.iniciarCountdown();
-    }
-
-    // Countdown hasta el primer partido oficial
-    iniciarCountdown() {
-        const primerPartido = new Date('2025-08-16T21:00:00'); // RCD Mallorca vs FC Barcelona
-        
-        const actualizarCountdown = () => {
-            const ahora = new Date();
-            const diferencia = primerPartido - ahora;
-            
-            if (diferencia > 0) {
-                const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-                const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-                const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
-                
-                this.actualizarElemento('days', dias.toString().padStart(2, '0'));
-                this.actualizarElemento('hours', horas.toString().padStart(2, '0'));
-                this.actualizarElemento('minutes', minutos.toString().padStart(2, '0'));
-                this.actualizarElemento('seconds', segundos.toString().padStart(2, '0'));
-            } else {
-                // La temporada ya comenzó
-                const countdownContainer = document.querySelector('.countdown-container');
-                if (countdownContainer) {
-                    countdownContainer.innerHTML = '<h4>🏆 ¡La temporada 2025-26 ya comenzó!</h4>';
-                }
-            }
-        };
-        
-        // Actualizar inmediatamente y luego cada segundo
-        actualizarCountdown();
-        setInterval(actualizarCountdown, 1000);
-    }
+  /**
+   * Formatear fecha
+   */
+  formatDate(date) {
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    return date.toLocaleDateString('es-ES', options);
+  }
 }
 
 // Inicializar cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', function() {
-    const laLigaManager = new LaLigaDataManager();
-    laLigaManager.inicializar();
-    
-    // Hacer disponible globalmente para otros scripts
-    window.laLigaManager = laLigaManager;
-});
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    new LaLigaDataManager();
+  });
+} else {
+  new LaLigaDataManager();
+}

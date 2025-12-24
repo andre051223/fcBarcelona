@@ -1,633 +1,692 @@
-/* Copa del Rey Specific Styles */
-
-/* Hero Section */
-.hero-copa {
-    background: linear-gradient(135deg, 
-        rgba(131, 12, 12, 0.9), 
-        rgba(14, 12, 119, 0.8)), 
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,204,0,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,204,0,0.1)"/><circle cx="40" cy="70" r="1.5" fill="rgba(255,204,0,0.1)"/><circle cx="70" cy="20" r="1" fill="rgba(255,204,0,0.1)"/><circle cx="30" cy="90" r="2" fill="rgba(255,204,0,0.1)"/></svg>');
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.hero-copa::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 30% 30%, rgba(255, 204, 0, 0.1) 0%, transparent 50%);
-    pointer-events: none;
-}
-
-.hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    background-color: #ffcc00;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+/* ============================================
+   COPA DEL REY 2025-26 - ESTILOS ESPECÍFICOS
+   ============================================ */
+
+/* Hero Section Copa del Rey */
+.copa-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 70px;
+}
+
+.copa-hero .hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.copa-hero .hero-bg-image {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://img2.rtve.es/v/16556444?w=1600&preview=01745709314453.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.3);
+}
+
+.copa-hero .hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(165, 0, 68, 0.85) 0%,
+    rgba(0, 77, 152, 0.75) 100%
+  );
+}
+
+.copa-hero .hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  width: 100%;
 }
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: #ffffff;
-    opacity: 0.9;
-}
-
-/* Stats Cards */
-.copa-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.stat-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 1.5rem;
-    border: 1px solid rgba(255, 204, 0, 0.3);
-    transition: all 0.3s ease;
-}
-
-.stat-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 204, 0, 0.6);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.stat-card h3 {
-    font-size: 2.5rem;
-    color: #ffcc00;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.stat-card p {
-    color: #ffffff;
-    font-size: 1rem;
-    opacity: 0.9;
-}
-
-/* Camino Section */
-.camino-section {
-    padding: 4rem 2rem;
-    background: rgba(0, 0, 0, 0.3);
-    margin: 2rem 0;
-    position: relative;
-    z-index: 2;
-}
-
-.camino-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #ffcc00;
-    text-align: center;
+
+.copa-hero .hero-content {
+  text-align: center;
+  color: var(--color-white);
 }
 
-.eliminatorias-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+.copa-trophy {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--barca-gold), #FFD700);
+  border-radius: 50%;
+  box-shadow: 0 8px 32px rgba(237, 187, 0, 0.4);
+}
+
+.copa-trophy svg {
+  width: 70px;
+  height: 70px;
+  stroke: var(--color-white);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.copa-hero .hero-title {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
-
-.eliminatoria {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 2rem;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.eliminatoria.completada {
-    border-color: #28a745;
-    background: rgba(40, 167, 69, 0.1);
+
+.copa-hero .hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  opacity: 0.95;
+  margin-bottom: var(--spacing-xs);
 }
 
-.eliminatoria.proxima {
-    border-color: #ffcc00;
-    background: rgba(255, 204, 0, 0.1);
-    animation: pulse 2s infinite;
+.copa-hero .hero-description {
+  font-size: 1rem;
+  font-weight: 300;
+  opacity: 0.85;
 }
 
-.eliminatoria.pendiente {
-    border-color: #6c757d;
-    background: rgba(108, 117, 125, 0.1);
+/* Sección de información */
+.info-section {
+  padding: var(--spacing-xl) 0;
+  background: var(--color-light);
 }
 
-.eliminatoria.final {
-    border-color: #dc3545;
-    background: rgba(220, 53, 69, 0.1);
-    border-width: 3px;
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  background: var(--color-white);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border-left: 4px solid var(--barca-red);
 }
 
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4); }
-    70% { box-shadow: 0 0 0 10px rgba(255, 204, 0, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
+.info-icon {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--barca-red), var(--barca-blue));
+  border-radius: 50%;
+  color: var(--color-white);
 }
 
-.eliminatoria h3 {
-    color: #ffcc00;
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
+.info-icon svg {
+  width: 40px;
+  height: 40px;
 }
 
-.partido {
-    margin: 1rem 0;
+.info-content {
+  flex: 1;
 }
 
-.equipos {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
+.info-title {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--barca-blue);
+  margin-bottom: var(--spacing-xs);
 }
 
-.equipo-local, .equipo-visitante {
-    font-weight: bold;
-    color: #ffffff;
+.info-text {
+  font-size: 1rem;
+  color: var(--color-gray-700);
+  line-height: 1.6;
 }
 
-.resultado {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #ffcc00;
-    background: rgba(255, 204, 0, 0.2);
-    padding: 0.3rem 0.8rem;
-    border-radius: 8px;
+/* Sección de cuadro de eliminatorias */
+.bracket-section {
+  padding: var(--spacing-3xl) 0;
+  background: var(--color-white);
 }
 
-.fecha {
-    color: #cccccc;
-    font-size: 0.9rem;
+.rounds-navigation {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  margin-bottom: var(--spacing-xl);
+  flex-wrap: wrap;
 }
 
-.fecha-final {
-    color: #ffcc00;
-    font-weight: bold;
+.round-btn {
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: 2px solid var(--color-gray-300);
+  background: var(--color-white);
+  color: var(--color-gray-700);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
 }
 
-.estado {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-weight: bold;
-    text-align: center;
-    font-size: 0.9rem;
+.round-btn:hover {
+  border-color: var(--barca-red);
+  color: var(--barca-red);
 }
 
-.completada .estado {
-    background: rgba(40, 167, 69, 0.2);
-    color: #28a745;
+.round-btn.active {
+  background: var(--barca-red);
+  border-color: var(--barca-red);
+  color: var(--color-white);
 }
 
-.proxima .estado {
-    background: rgba(255, 204, 0, 0.2);
-    color: #ffcc00;
+/* Contenedor de eliminatorias */
+.bracket-container {
+  display: grid;
+  gap: var(--spacing-xl);
 }
 
-.pendiente .estado {
-    background: rgba(108, 117, 125, 0.2);
-    color: #6c757d;
+.round-group {
+  background: var(--color-light);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
 }
 
-.final .estado {
-    background: rgba(220, 53, 69, 0.2);
-    color: #dc3545;
+.round-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--barca-red);
 }
 
-/* Próxima Eliminatoria */
-.proxima-section {
-    padding: 4rem 2rem;
-    background: linear-gradient(135deg, rgba(255, 204, 0, 0.1), rgba(131, 12, 12, 0.1));
-    position: relative;
-    z-index: 2;
+.round-name {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--barca-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.proxima-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #ffcc00;
-    text-align: center;
+.round-matches {
+  display: grid;
+  gap: var(--spacing-lg);
 }
 
-.partido-detalle {
-    max-width: 1000px;
-    margin: 0 auto;
+/* Tarjeta de eliminatoria */
+.tie-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: all var(--transition-base);
 }
 
-.equipos-enfrentamiento {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 2rem;
-    align-items: center;
-    margin-bottom: 3rem;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 20px;
+.tie-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
 }
 
-.equipo {
-    text-align: center;
+.tie-card.barcelona-tie {
+  border: 2px solid var(--barca-blue);
 }
 
-.equipo img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 1rem;
+.tie-header {
+  background: var(--color-gray-100);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-gray-700);
 }
 
-.equipo h3 {
-    color: #ffcc00;
-    margin-bottom: 0.5rem;
+.tie-matches {
+  padding: var(--spacing-lg);
 }
 
-.equipo p {
-    color: #cccccc;
+.tie-match {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) 0;
 }
 
-.vs {
-    text-align: center;
-    color: #ffcc00;
+.tie-match:not(:last-child) {
+  border-bottom: 1px solid var(--color-gray-200);
+  margin-bottom: var(--spacing-md);
 }
 
-.vs span {
-    font-size: 2rem;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 1rem;
+.tie-match-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  flex: 1;
 }
 
-.fecha-partido {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+.tie-team {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
 }
 
-.hora-partido {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
+.tie-team.home {
+  justify-content: flex-start;
 }
 
-.estadio {
-    font-size: 0.9rem;
-    color: #cccccc;
+.tie-team.away {
+  justify-content: flex-end;
+  flex-direction: row-reverse;
 }
 
-.estadisticas-enfrentamiento {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 15px;
+.tie-team-name {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
 }
 
-.estadisticas-enfrentamiento h3 {
-    color: #ffcc00;
-    margin-bottom: 1.5rem;
-    text-align: center;
+.tie-score {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--barca-blue);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
 }
 
-.historial-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+.tie-date {
+  font-size: 0.85rem;
+  color: var(--color-gray-600);
+  text-align: center;
+  margin-top: var(--spacing-xs);
 }
 
-.stat-item {
-    text-align: center;
+.tie-aggregate {
+  background: var(--color-gray-100);
+  padding: var(--spacing-md);
+  text-align: center;
+  border-top: 2px solid var(--color-gray-200);
+  margin-top: var(--spacing-md);
 }
 
-.stat-item .numero {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #ffcc00;
-    margin-bottom: 0.5rem;
+.aggregate-label {
+  font-size: 0.85rem;
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-xs);
 }
 
-.stat-item .descripcion {
-    color: #ffffff;
-    font-size: 0.9rem;
+.aggregate-score {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--barca-blue);
 }
 
-/* Historial Section */
-.historial-section {
-    padding: 4rem 2rem;
-    position: relative;
-    z-index: 2;
+.tie-winner {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 2px solid var(--color-gray-200);
+  text-align: center;
 }
 
-.historial-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #ffcc00;
-    text-align: center;
+.winner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: linear-gradient(135deg, var(--barca-blue), var(--barca-red));
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 
-.historial-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 4rem;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+.winner-badge svg {
+  width: 20px;
+  height: 20px;
 }
 
-.historia-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    border: 1px solid rgba(255, 204, 0, 0.3);
-    transition: transform 0.3s ease;
+/* Estado vacío */
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-3xl) var(--spacing-lg);
+  color: var(--color-gray-600);
 }
 
-.historia-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 204, 0, 0.6);
+.empty-state svg {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-lg);
+  opacity: 0.5;
 }
 
-.historia-card h3 {
-    color: #ffcc00;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+.empty-state h3 {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-gray-700);
+  margin-bottom: var(--spacing-sm);
 }
 
-.historia-card p {
-    color: #ffffff;
-    opacity: 0.9;
+.empty-state p {
+  font-size: 1rem;
+  color: var(--color-gray-600);
 }
 
-.titulos-recientes {
-    max-width: 800px;
-    margin: 0 auto;
+/* Sección de historial */
+.history-section {
+  padding: var(--spacing-3xl) 0;
+  background: var(--color-light);
 }
 
-.titulos-recientes h3 {
-    color: #ffcc00;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
+.history-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-3xl);
 }
 
-.titulos-lista {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    overflow: hidden;
+.history-card {
+  background: var(--color-white);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border-top: 4px solid var(--barca-red);
 }
 
-.titulo-item {
-    display: grid;
-    grid-template-columns: 80px 1fr 200px;
-    gap: 1rem;
-    padding: 1.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    align-items: center;
-    transition: background-color 0.3s ease;
+.history-number {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--barca-red);
+  margin-bottom: var(--spacing-sm);
 }
 
-.titulo-item:hover {
-    background: rgba(255, 204, 0, 0.1);
+.history-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gray-700);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.titulo-item:last-child {
-    border-bottom: none;
+/* Timeline de títulos */
+.titles-timeline {
+  background: var(--color-white);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
 }
 
-.titulo-item .año {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #ffcc00;
+.timeline-title {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--barca-blue);
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
 }
 
-.titulo-item .final {
-    color: #ffffff;
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: var(--spacing-md);
 }
 
-.titulo-item .estadio {
-    color: #cccccc;
-    font-size: 0.9rem;
-    text-align: right;
+.timeline-item {
+  background: var(--color-gray-100);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-gray-700);
+  transition: all var(--transition-base);
 }
 
-/* Trofeos Section */
-.trofeos-section {
-    padding: 4rem 2rem;
-    background: rgba(0, 0, 0, 0.3);
-    position: relative;
-    z-index: 2;
+.timeline-item:hover {
+  background: var(--barca-red);
+  color: var(--color-white);
+  transform: scale(1.05);
 }
 
-.trofeos-section img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 15px;
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease;
+.timeline-item.highlight {
+  background: var(--barca-red);
+  color: var(--color-white);
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(165, 0, 68, 0.3);
 }
 
-.trofeos-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #ffcc00;
-    text-align: center;
+/* Sección de estadísticas */
+.stats-section {
+  padding: var(--spacing-3xl) 0;
+  background: var(--color-white);
 }
 
-.trofeos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
 }
 
-.trofeo-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
-    border-radius: 15px;
-    text-align: center;
-    border: 1px solid rgba(255, 204, 0, 0.3);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+.stat-card-large {
+  background: var(--color-white);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  border: 1px solid var(--color-gray-200);
 }
 
-.trofeo-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    border-color: rgba(255, 204, 0, 0.6);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+.stat-card-large:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 
-.trofeo-imagen {
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--barca-red), var(--barca-blue));
+  border-radius: 50%;
+  color: var(--color-white);
 }
 
-.trofeo-card:hover img {
-    transform: scale(1.05);
+.stat-icon svg {
+  width: 32px;
+  height: 32px;
 }
-
-
 
-.trofeo-card h3 {
-    color: #ffcc00;
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
+.stat-value {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--barca-blue);
+  margin-bottom: var(--spacing-xs);
 }
 
-.trofeo-card p {
-    color: #ffffff;
-    opacity: 0.9;
-    font-size: 0.9rem;
+.stat-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-gray-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* Footer */
-footer {
-    padding: 2rem;
-    text-align: center;
-    margin-top: 4rem;
+.main-footer {
+  background: var(--color-gray-900);
+  color: var(--color-white);
+  padding: var(--spacing-xl) 0;
 }
 
-footer p {
-    color: #ffffff;
-    margin-bottom: 1rem;
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
 }
 
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
 }
 
-.footer-links a {
-    color: #ffcc00;
-    text-decoration: none;
-    transition: color 0.3s ease;
+.footer-logo {
+  width: 50px;
+  height: auto;
 }
 
-.footer-links a:hover {
-    color: #ffffff;
+.footer-motto {
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.footer-copyright {
+  text-align: right;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .trofeos-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-    }
+  .copa-hero .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .copa-trophy {
+    width: 100px;
+    height: 100px;
+  }
+
+  .copa-trophy svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  .timeline-grid {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .copa-stats {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .eliminatorias-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .equipos-enfrentamiento {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .historial-stats {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .titulo-item {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 0.5rem;
-    }
-    
-    .titulo-item .estadio {
-        text-align: center;
-    }
-    
-    .trofeos-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-    }
-    
-    .trofeos-section img {
-        height: 180px;
-    }
-    
-    .historial-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
+  .copa-hero {
+    height: 50vh;
+    min-height: 400px;
+  }
+
+  .copa-hero .hero-title {
+    font-size: 2rem;
+  }
+
+  .copa-trophy {
+    width: 80px;
+    height: 80px;
+  }
+
+  .copa-trophy svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  .info-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .rounds-navigation {
+    gap: var(--spacing-xs);
+  }
+
+  .round-btn {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: 0.85rem;
+  }
+
+  .tie-match-info {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .tie-team {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tie-team.away {
+    flex-direction: row;
+  }
+
+  .history-number {
+    font-size: 2.5rem;
+  }
+
+  .timeline-grid {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .stat-card-large {
+    padding: var(--spacing-lg);
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-copyright {
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    
-    .copa-stats {
-        grid-template-columns: 1fr;
-    }
-    
-    .camino-section, 
-    .proxima-section, 
-    .historial-section, 
-    .trofeos-section {
-        padding: 2rem 1rem;
-    }
-    
-    .trofeos-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .trofeos-section img {
-        height: 150px;
-    }
-    
-    .trofeo-card {
-        padding: 1rem;
-    }
-    
-    .trofeos-section h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-    
-    .historial-grid {
-        grid-template-columns: 1fr;
-    }
+  .copa-hero .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .rounds-navigation {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding-bottom: var(--spacing-sm);
+  }
+
+  .round-btn {
+    white-space: nowrap;
+  }
+
+  .timeline-grid {
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: var(--spacing-xs);
+  }
+
+  .timeline-item {
+    padding: var(--spacing-sm);
+    font-size: 0.85rem;
+  }
 }

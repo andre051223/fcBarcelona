@@ -1,197 +1,272 @@
 <!doctype html>
-<html class="no-js" lang="es">
+<html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FC Barcelona - La Liga 2025-26 | Resultados y Clasificación</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/01_laLiga.css">
-    <meta name="description" content="Sigue el desempeño del FC Barcelona en La Liga 2025-26. Resultados, tabla de posiciones, estadísticas y próximos partidos.">
-    <meta name="keywords" content="FC Barcelona, La Liga, resultados, tabla, clasificación, estadísticas, calendario">
-    
-    <link rel="icon" href="img/fcBarcelona.png" sizes="any">
-    <link rel="manifest" href="site.webmanifest">
-    <meta name="theme-color" content="#fafafa">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Liga 2025-26 - FC Barcelona</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/01_laLiga.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<meta name="description" content="Sigue al FC Barcelona en La Liga 2025-26. Clasificación, resultados y calendario de partidos.">
+<link rel="icon" href="img/fcBarcelona.png" sizes="any">
+<link rel="apple-touch-icon" href="img/fcBarcelona.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#004D98">
 </head>
 
 <body>
-    <header>
-        <section class="navbar">
-            <nav>
-                <a href="index.html">
-                    <img src="https://logohistory.net/wp-content/uploads/2023/12/FC-Barcelona-Logo-2018.png" alt="Logo FC Barcelona">
-                </a>
-                <a href="#tabla-posiciones">Clasificación</a>
-                <a href="#proximos-partidos">Calendario</a>
-                <a href="#estadisticas">Estadísticas</a>
-            </nav>
-        </section>
-    </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-laliga">
-            <section class="hero-content">
-                <h1>FC Barcelona en La Liga 2025-26</h1>
-                
-                <section class="season-stats">
-                    <section class="stat-card">
-                        <h3 id="posicion-actual">-</h3>
-                        <p>Posición</p>
-                    </section>
+<!-- Header con navegación -->
+<header class="main-header">
+<nav class="main-nav">
+<div class="nav-container">
+    <div class="logo-container">
+    <img src="https://logohistory.net/wp-content/uploads/2023/12/FC-Barcelona-Logo-2018.png" alt="Logo FC Barcelona" class="logo">
+    <span class="logo-text">FC Barcelona</span>
+    </div>
+    
+    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+    </button>
+    
+    <ul class="nav-links">
+    <li><a href="index.html" class="nav-link">Inicio</a></li>
+    <li><a href="01_laLiga.html" class="nav-link active">La Liga</a></li>
+    <li><a href="02_copaDelRey.html" class="nav-link">Copa del Rey</a></li>
+    <li><a href="03_uefa.html" class="nav-link">Champions League</a></li>
+    <li><a href="04_supercopa.html" class="nav-link">Supercopa</a></li>
+    </ul>
+</div>
+</nav>
+</header>
 
-                    <section class="stat-card">
-                        <h3 id="partidos-ganados">0</h3>
-                        <p>Ganados</p>
-                    </section>
+<!-- Hero Section La Liga -->
+<section class="laliga-hero">
+<div class="hero-background">
+<div class="hero-bg-image"></div>
+<div class="hero-bg-overlay"></div>
+</div>
 
-                    <section class="stat-card">
-                        <h3 id="partidos-empatados">0</h3>
-                        <p>Empates</p>
-                    </section>
+<div class="hero-container">
+<div class="hero-content">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/LaLiga_EA_Sports_2023_Vertical_Logo.svg/1200px-LaLiga_EA_Sports_2023_Vertical_Logo.svg.png" alt="La Liga" class="laliga-logo">
+    <h1 class="hero-title">Temporada 2025-26</h1>
+    <p class="hero-subtitle">Defendiendo el título de La Liga</p>
+</div>
+</div>
+</section>
 
-                    <section class="stat-card">
-                        <h3 id="partidos-perdidos">0</h3>
-                        <p>Derrotas</p>
-                    </section>
+<main class="main-content">
 
-                    <section class="stat-card">
-                        <h3 id="puntos-totales">0</h3>
-                        <p>Puntos</p>
-                    </section>
-                </section>
+<!-- Navegación de secciones -->
+<div class="section-nav">
+<div class="container">
+    <div class="section-nav-links">
+    <a href="#clasificacion" class="section-nav-link active">Clasificación</a>
+    <a href="#calendario" class="section-nav-link">Calendario</a>
+    <a href="#estadisticas" class="section-nav-link">Estadísticas</a>
+    </div>
+</div>
+</div>
 
-                <section class="countdown-container">
-                    <h4>Próximo partido:</h4>
-                    <section class="countdown" id="countdown-timer">
-                        <span id="days">00</span> Días 
-                        <span id="hours">00</span> Horas 
-                        <span id="minutes">00</span> Minutos 
-                        <span id="seconds">00</span> Segundos
-                    </section>
-                </section>
-            </section>
-        </section>
+<!-- Sección de Clasificación -->
+<section id="clasificacion" class="standings-section">
+<div class="container">
+    <div class="section-header">
+    <h2 class="section-title">Clasificación de La Liga</h2>
+    <p class="section-description">Tabla de posiciones actualizada</p>
+    </div>
 
-        <!-- Tabla de Posiciones -->
-        <section id="tabla-posiciones" class="tabla-section">
-            <h2>Clasificación La Liga 2025-26</h2>
-            
-            <section class="tabla-container">
-                <table class="tabla-laliga">
-                    <thead>
-                        <tr>
-                            <th>Posición</th>
-                            <th>Equipo</th>
-                            <th>PJ</th>
-                            <th>G</th>
-                            <th>E</th>
-                            <th>P</th>
-                            <th>GF</th>
-                            <th>GC</th>
-                            <th>DG</th>
-                            <th>Pts</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tabla-body">
-                        <!-- Los datos se cargarán dinámicamente -->
-                    </tbody>
-                </table>
-            </section>
-        </section>
+    <div class="standings-table-container">
+    <table class="standings-table">
+        <thead>
+        <tr>
+            <th class="pos-col">POS</th>
+            <th class="team-col">EQUIPO</th>
+            <th class="stat-col">PJ</th>
+            <th class="stat-col">G</th>
+            <th class="stat-col">E</th>
+            <th class="stat-col">P</th>
+            <th class="stat-col">GF</th>
+            <th class="stat-col">GC</th>
+            <th class="stat-col">DG</th>
+            <th class="pts-col">PTS</th>
+        </tr>
+        </thead>
+        <tbody id="standings-tbody">
+        <!-- Se llenará dinámicamente con JavaScript -->
+        </tbody>
+    </table>
+    </div>
 
-        <!-- Calendario de La Liga -->
-        <section id="proximos-partidos" class="proximos-section">
-            <h2>Calendario de La Liga 2025-26</h2>
-            <p class="section-description">Primeros partidos oficiales de la nueva temporada</p>
-            <section class="proximos-grid" id="proximos-grid">
-                <!-- Los próximos partidos se cargarán dinámicamente -->
-            </section>
-        </section>
+    <div class="table-legend">
+    <div class="legend-item">
+        <span class="legend-badge ucl"></span>
+        <span>UEFA Champions League</span>
+    </div>
+    <div class="legend-item">
+        <span class="legend-badge uel"></span>
+        <span>UEFA Europa League</span>
+    </div>
+    <div class="legend-item">
+        <span class="legend-badge uecl"></span>
+        <span>UEFA Conference League</span>
+    </div>
+    <div class="legend-item">
+        <span class="legend-badge relegation"></span>
+        <span>Descenso</span>
+    </div>
+    </div>
+</div>
+</section>
 
-        <!-- Estadísticas Detalladas -->
-        <section id="estadisticas" class="estadisticas-section">
-            <h2>Estadísticas de la Temporada</h2>
-            <section class="stats-container">
-                <section class="stats-grid">
-                    <section class="stat-category">
-                        <h3>Ataque</h3>
-                        <section class="stat-item">
-                            <span class="stat-label">Goles por partido</span>
-                            <span class="stat-value" id="goles-por-partido">2.7</span>
-                        </section>
-                        <section class="stat-item">
-                            <span class="stat-label">Disparos por partido</span>
-                            <span class="stat-value" id="disparos-partido">16.2</span>
-                        </section>
-                        <section class="stat-item">
-                            <span class="stat-label">Precisión de pases</span>
-                            <span class="stat-value" id="precision-pases">89%</span>
-                        </section>
-                    </section>
-                    
-                    <section class="stat-category">
-                        <h3>Defensa</h3>
-                        <section class="stat-item">
-                            <span class="stat-label">Goles en contra</span>
-                            <span class="stat-value" id="goles-contra">18</span>
-                        </section>
-                        <section class="stat-item">
-                            <span class="stat-label">Porterías a cero</span>
-                            <span class="stat-value" id="porterias-cero">8</span>
-                        </section>
-                        <section class="stat-item">
-                            <span class="stat-label">Recuperaciones</span>
-                            <span class="stat-value" id="recuperaciones">267</span>
-                        </section>
-                    </section>
-                    
-                    <section class="stat-category">
-                        <h3>Disciplina</h3>
-                        <section class="stat-item">
-                            <span class="stat-label">Tarjetas amarillas</span>
-                            <span class="stat-value" id="tarjetas-amarillas">32</span>
-                        </section>
-                        <section class="stat-item">
-                            <span class="stat-label">Tarjetas rojas</span>
-                            <span class="stat-value" id="tarjetas-rojas">2</span>
-                        </section>
-                        <section class="stat-item">
-                            <span class="stat-label">Faltas cometidas</span>
-                            <span class="stat-value" id="faltas-cometidas">203</span>
-                        </section>
-                    </section>
-                </section>
-            </section>
-        </section>
+<!-- Sección de Calendario -->
+<section id="calendario" class="calendar-section">
+<div class="container">
+    <div class="section-header">
+    <h2 class="section-title">Calendario del FC Barcelona</h2>
+    <p class="section-description">Todos los partidos de la temporada 2025-26</p>
+    </div>
 
-        <!-- Evolución de la Temporada -->
-        <section class="evolucion-section">
-            <h2>Evolución en La Liga</h2>
-            <section class="chart-container">
-                <canvas id="evolucion-chart" width="800" height="400"></canvas>
-            </section>
-        </section>
-    </main>
+    <div class="calendar-filters">
+    <button class="filter-btn active" data-filter="all">Todos</button>
+    <button class="filter-btn" data-filter="played">Jugados</button>
+    <button class="filter-btn" data-filter="upcoming">Próximos</button>
+    </div>
 
-    <footer>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="02_copaDelRey.html">Copa del Rey</a>
-            <a href="03_uefa.html">Champions League</a>
-            <a href="04_supercopa.html">Supercopa</a>
-        </nav>
-            <p>&copy; 2025 Diego Andrés Lopez.</p>
+    <div id="matches-container" class="matches-grid">
+    <!-- Se llenará dinámicamente con JavaScript -->
+    </div>
+</div>
+</section>
 
-    </footer>
+<!-- Sección de Estadísticas -->
+<section id="estadisticas" class="stats-section">
+<div class="container">
+    <div class="section-header">
+    <h2 class="section-title">Estadísticas del FC Barcelona</h2>
+    <p class="section-description">Rendimiento en La Liga 2025-26</p>
+    </div>
 
-    <!-- Scripts -->
-    <script src="js/app.js"></script>
-    <script src="js/laliga-data.js"></script>
-    <script src="js/laliga-charts.js"></script>
-    <script src="js/laliga-advanced.js"></script>
-    <script src="js/laliga-api.js"></script>
+    <div class="stats-grid">
+    <div class="stat-card-large">
+        <div class="stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+        </svg>
+        </div>
+        <div class="stat-value" id="stat-matches">0</div>
+        <div class="stat-label">Partidos Jugados</div>
+    </div>
+
+    <div class="stat-card-large">
+        <div class="stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+        </div>
+        <div class="stat-value" id="stat-wins">0</div>
+        <div class="stat-label">Victorias</div>
+    </div>
+
+    <div class="stat-card-large">
+        <div class="stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <line x1="9" y1="3" x2="9" y2="21"/>
+            <line x1="15" y1="3" x2="15" y2="21"/>
+        </svg>
+        </div>
+        <div class="stat-value" id="stat-draws">0</div>
+        <div class="stat-label">Empates</div>
+    </div>
+
+    <div class="stat-card-large">
+        <div class="stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+        </div>
+        <div class="stat-value" id="stat-losses">0</div>
+        <div class="stat-label">Derrotas</div>
+    </div>
+
+    <div class="stat-card-large">
+        <div class="stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polygon points="10 8 16 12 10 16 10 8"/>
+        </svg>
+        </div>
+        <div class="stat-value" id="stat-goals-for">0</div>
+        <div class="stat-label">Goles a Favor</div>
+    </div>
+
+    <div class="stat-card-large">
+        <div class="stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+        </div>
+        <div class="stat-value" id="stat-goals-against">0</div>
+        <div class="stat-label">Goles en Contra</div>
+    </div>
+
+    <div class="stat-card-large">
+        <div class="stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+        </svg>
+        </div>
+        <div class="stat-value" id="stat-goal-diff">0</div>
+        <div class="stat-label">Diferencia de Goles</div>
+    </div>
+
+    <div class="stat-card-large">
+        <div class="stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+        </svg>
+        </div>
+        <div class="stat-value" id="stat-points">0</div>
+        <div class="stat-label">Puntos Totales</div>
+    </div>
+    </div>
+</div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="main-footer">
+<div class="container">
+<div class="footer-content">
+    <div class="footer-brand">
+    <img src="https://logohistory.net/wp-content/uploads/2023/12/FC-Barcelona-Logo-2018.png" alt="FC Barcelona" class="footer-logo">
+    <p class="footer-motto">Més que un club</p>
+    </div>
+    <div class="footer-copyright">
+    <p>&copy; 2025 FC Barcelona. Todos los derechos reservados.</p>
+    <p>Temporada 2025-26</p>
+    </div>
+</div>
+</div>
+</footer>
+
+<script src="js/navigation.js"></script>
+<script src="js/match-manager.js"></script>
+<script src="js/laliga-data.js"></script>
+<script src="js/app.js"></script>
+
 </body>
-
 </html>
